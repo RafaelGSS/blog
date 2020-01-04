@@ -3,9 +3,9 @@ use Mix.Config
 # Configure your database
 config :blog, Blog.Repo,
   username: "root",
-  password: "",
+  password: "root",
   database: "blog_dev",
-  hostname: "localhost",
+  hostname: "blog_mysql",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

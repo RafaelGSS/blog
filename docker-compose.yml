@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  blog_dev:
+    image: elixir:1.9.0
+    command: bash -c "mix deps.get && mix phx.server"
+    working_dir: /usr/local/app/
+    restart: on-failure
+    container_name: blog_dev
+    environment:
+      DATABASE_URL: mysql://root:root@blog_mysql/blog_development
+    links:
+      - blog_mysql:mysql
+    volumes:
+      - './:/usr/local/app/'
+    ports:
+      - '4000:4000'
+    depends_on:
+      - blog_mysql
+    networks:
+      - netw
+
+  blog_mysql:
+    image: mysql:8
+    container_name: blog_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '9005:3306'
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - netw
+
+networks:
+  netw:
+    external:
+      name: netw
