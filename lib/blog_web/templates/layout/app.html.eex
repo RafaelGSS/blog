@@ -9,6 +9,9 @@
   </head>
   <body>
     <div id="app">
+      <header-layout></header-layout>
+      <%= render @view_module, @view_template, assigns %>
+      <footer-layout></footer-layout>
     </div>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>

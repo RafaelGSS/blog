@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <div>
     Header from component
-  </header>
+  </div>
 </template>
 
 <script>

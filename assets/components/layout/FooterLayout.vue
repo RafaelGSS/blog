@@ -1,7 +1,7 @@
 <template>
-  <footer>
+  <div>
     Footer from component
-  </footer>
+  </div>
 </template>
 
 <script>
