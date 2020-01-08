@@ -1,7 +1,7 @@
 <template>
-  <div>
-    Footer from component
-  </div>
+  <footer>
+    <span>© Sebastian Daschner, CC BY-NC-SA 4.0</span>
+  </footer>
 </template>
 
 <script>
