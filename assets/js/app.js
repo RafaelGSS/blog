@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import css from '../css/app.scss'
+import css from '../css/app.css'
 
 import HeaderLayout from '../components/layout/HeaderLayout'
 import FooterLayout from '../components/layout/FooterLayout'
