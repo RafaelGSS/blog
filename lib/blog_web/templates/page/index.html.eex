@@ -4,10 +4,10 @@
     <h2>
       <a href="link"><%= post.title %></a>
     </h2>
-    <span><%= post.subtitle %></span>
+    <span><%= post.date %></span>
 
     <p>
-      <%= post.text %>
+      <%= post.intro %>...
       <br>
       <a class="more" href="link">read more</a>
     </p>

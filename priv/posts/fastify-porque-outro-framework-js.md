@@ -1,8 +1,13 @@
+---
+title: First post
+date: 2016-04-24
+---
+
 # Fastify, Porque outro framework JS?
 
 Uma introdução aos conceitos e motivações por trás do framework.
 
-![Fastify brand image](https://cdn-images-1.medium.com/max/4800/0*my2MwgjbxHWLU45c.png)*Fastify brand image*
+![Fastify brand image](https://cdn-images-1.medium.com/max/4800/0*my2MwgjbxHWLU45c.png)
 
 Todos sabemos que o ecossistema Javascript é formado por diversos frameworks (*possivelmente enquanto você está lendo esse artigo, um novo framework js é criado*). E neste artigo irei apresentar um framework chamado **Fastify**, e o porque ele chamou minha atenção.
 
