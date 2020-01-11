@@ -1,1 +1,16 @@
-<home></home>
+<%= for post <- @posts do %>
+<section>
+  <div class="teaser">
+    <h2>
+      <a href="link"><%= post.title %></a>
+    </h2>
+    <span><%= post.subtitle %></span>
+
+    <p>
+      <%= post.text %>
+      <br>
+      <a class="more" href="link">read more</a>
+    </p>
+  </div>
+</section>
+<% end %>

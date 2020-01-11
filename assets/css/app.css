@@ -182,3 +182,56 @@ footer span {
     padding-right: 1em;
   }
 }
+
+/* Home */
+main {
+  color: #333;
+  max-width: 45em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+main a {
+  font-family: 'Monospaced', monospace;
+  font-size: 0.9em;
+}
+
+main ul {
+  padding-left: 1em;
+}
+
+main ul li p {
+  margin: 0;
+  vertical-align: text-top;
+  text-align: left;
+}
+
+main h3:first-child {
+  margin-top: 1em;
+}
+
+main h2 a, main h3 a {
+  font-family: 'SourceSerifPro', serif;
+  font-size: 1em;
+}
+
+.teaser {
+    border-bottom: 1px solid #ddd;
+    padding: 1.5em 0;
+}
+
+.teaser span, span.date {
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 1.4em;
+    color: #7595a4;
+}
+
+.teaser p {
+    margin: 0;
+    font-size: small;
+}
+
+.more {
+  font-weight: bold;
+}

@@ -29,7 +29,9 @@
           </li>
         </ul>
       </header>
-      <%= render @view_module, @view_template, assigns %>
+      <main>
+        <%= render @view_module, @view_template, assigns %>
+      </main>
       <footer>
         <span>© Rafael Gonzaga, Brasil - SP</span>
       </footer>
