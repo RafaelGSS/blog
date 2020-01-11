@@ -23,20 +23,6 @@ module.exports = (env, options) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'vue-loader'
-        }
-      },
-      {
         test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
@@ -46,11 +32,5 @@ module.exports = (env, options) => ({
     new MiniCssExtractPlugin({ filename: '../css/app.css' }),
     new CopyWebpackPlugin([{ from: 'static/', to: '../' }]),
     new VueLoaderPlugin()
-  ],
-  resolve: {
-    alias: {
-      vue$: 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
-  }
+  ]
 })

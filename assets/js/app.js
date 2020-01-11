@@ -1,1 +1,1 @@
-import css from '../css/app.css'
+import css from '../css/app.scss'
