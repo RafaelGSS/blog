@@ -9,9 +9,30 @@
   </head>
   <body>
     <div id="app">
-      <header-layout></header-layout>
+      <header>
+        <h1>
+          <a href="#"><strong>Rafael Gonzaga</strong> blog</a>
+        </h1>
+        <hr>
+        <ul>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/publications">Publications</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="/">Blog</a>
+          </li>
+        </ul>
+      </header>
       <%= render @view_module, @view_template, assigns %>
-      <footer-layout></footer-layout>
+      <footer>
+        <span>© Rafael Gonzaga, Brasil - SP</span>
+      </footer>
     </div>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
