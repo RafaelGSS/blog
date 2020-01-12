@@ -1,0 +1,3 @@
+<section class="post__raw-data">
+  <%= raw(@post.text) %>
+</section>
