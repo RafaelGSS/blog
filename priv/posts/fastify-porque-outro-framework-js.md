@@ -1,5 +1,5 @@
 ---
-title: First post
+title: Fastify, Porque outro framework JS?
 date: 2016-04-24
 ---
 
@@ -51,7 +51,7 @@ Primeiro de tudo, vamos instalar o Fastify:
 
 E agora vamos criar nosso index.js juntamente com nossos plugins:
 
-<iframe src="https://medium.com/media/5cd21396de9cc5539b374946c177b8e3" frameborder=0></iframe>
+<script src="https://gist.github.com/RafaelGSS/e951398544cf06e8538774d546d091c1.js"></script>
 
 Como você podem ver nesse snippet index.js acima:
 
@@ -63,7 +63,7 @@ Como você podem ver nesse snippet index.js acima:
 
 E agora nossos plugins:
 
-<iframe src="https://medium.com/media/0fecc88d3b4a4797bf1d50b7cf9da576" frameborder=0></iframe>
+<script src="https://gist.github.com/RafaelGSS/55653247c21ec4397cf4abd9438baecd.js"></script>
 
 Nos plugins, recebemos o contexto atual (instância Fastify) para podermos trabalhar a partir deste escopo.
 
