@@ -2,14 +2,17 @@
 <section>
   <div class="teaser">
     <h2>
-      <a href="link"><%= post.title %></a>
+      <a href="<%= Routes.post_path @conn, :show, post.slug %>">
+        <%= post.title %>
+      </a>
     </h2>
     <span><%= post.date %></span>
 
     <p>
       <%= post.intro %>...
-      <br>
-      <a class="more" href="link">read more</a>
+      <a class="more" href="<%= Routes.post_path @conn, :show, post.slug %>">
+        read more
+      </a>
     </p>
   </div>
 </section>

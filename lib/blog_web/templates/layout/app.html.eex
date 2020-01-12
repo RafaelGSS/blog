@@ -19,7 +19,7 @@
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="/publications">Publications</a>
+            <a href="<%= Routes.page_path @conn, :index %>">Publications</a>
           </li>
           <li>
             <a href="/contact">Contact</a>
