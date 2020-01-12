@@ -1,5 +1,8 @@
 FROM elixir:1.9.0
 
+ARG IMAGE_ENVIRONMENT=dev
+
+ENV MIX_ENV $IMAGE_ENVIRONMENT
 # Install debian packages
 RUN apt-get update
 RUN apt-get install --yes build-essential inotify-tools
@@ -14,5 +17,10 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs
 
+
+COPY . /app
 WORKDIR /app
+# RUN mix deps.get --force
+
 EXPOSE 4000
+# CMD ["mix", "phx.server"]
