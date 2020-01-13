@@ -9,8 +9,6 @@ services:
     container_name: blog_prod
     environment:
       VIRTUAL_HOST: 'blog.rafaelgss.com.br'
-      # DATABASE_URL: 'mysql://root:alB85Nicr^8@64.225.123.69/blog_production'
-      # SECRET_KEY_BASE: 'jm6oAbv0yegPXrLqRKP3fvb+3kNoqfZupQXxE84Wwg8qWs5V+Jq1SndAFIN03NLm'
     env_file:
       - ./.env
     ports:
