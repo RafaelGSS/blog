@@ -3,7 +3,7 @@ defmodule Blog.Posts.PostsManager do
 
   def all_posts do
     File.ls!("priv/posts")
-    |> Enum.map(&Blog.Posts.Post.compile/1)
+    |> Enum.map(&Post.compile/1)
   end
 
   def get_by_slug(slug) do
