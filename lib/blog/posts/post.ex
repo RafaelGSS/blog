@@ -37,7 +37,7 @@ defmodule Blog.Posts.Post do
   defp extract({props, content}, post) do
     %Blog.Posts.Post{post |
       title: get_prop(props, "title"),
-      date: "2019/01/10 10:00AM",
+      date: get_prop(props, "date"),
       intro: extract_intro(content),
       text: content}
   end

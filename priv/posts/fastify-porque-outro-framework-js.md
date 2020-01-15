@@ -1,6 +1,6 @@
 ---
 title: Fastify, Porque outro framework JS?
-date: 2016-04-24
+date: Jul 26, 2019
 ---
 
 # Fastify, Porque outro framework JS?
