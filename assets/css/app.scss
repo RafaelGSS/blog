@@ -1,17 +1,11 @@
 @import "./base.scss";
 @import "./layouts.scss";
 
-/* Home */
 main {
   color: #333;
   max-width: 45em;
   margin: 0 auto;
   padding: 1em;
-
-  a {
-    font-family: 'Monospaced', monospace;
-    font-size: 0.9em;
-  }
 
   ul {
     padding-left: 1em;
@@ -25,11 +19,6 @@ main {
 
   h3:first-child {
     margin-top: 1em;
-  }
-
-  h2 a, h3 a {
-    font-family: 'SourceSerifPro', serif;
-    font-size: 1em;
   }
 }
 
@@ -54,7 +43,6 @@ span.date {
 
 .teaser p {
   margin: 0;
-  font-size: small;
 }
 
 .more {

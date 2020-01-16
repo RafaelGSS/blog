@@ -1,10 +1,37 @@
+@font-face {
+  font-family: 'Apercu';
+  src: url("/fonts/ApercuPro-Regular.woff") format("woff"), url("/fonts/ApercuPro-Regular.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: 'Apercu';
+  font-weight: bold;
+  src: url("/fonts/Apercu-Bold.woff") format("woff"), url("/fonts/Apercu-Bold.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: 'Apercu';
+  font-style: italic;
+  src: url("/fonts/Apercu-Italic.woff") format("woff"), url("/fonts/Apercu-Italic.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: 'ApercuMedium';
+  src: url("/fonts/ApercuPro-Medium.woff") format("woff"), url("/fonts/ApercuPro-Medium.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: 'ApercuMono';
+  src: url("/fonts/Apercu-Mono.woff") format("woff"), url("/fonts/Apercu-Mono.ttf")  format("truetype");
+}
+
 html {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Monospaced', monospace;
+  font-family: 'Apercu', serif;
   font-size: 1em;
   height: 100%;
 }
@@ -23,6 +50,7 @@ p {
 
 h1 {
   font-weight: bold;
+  font-size: 2em;
 }
 
 h2 {
