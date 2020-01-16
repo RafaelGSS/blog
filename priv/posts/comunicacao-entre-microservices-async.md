@@ -90,7 +90,7 @@ Rodando ambos ao mesmo tempo, teremos algo como:
 
 Perceba que as mensagens são divididas entre os consumers.
 
-O código desse exemplo está [**aqui](https://github.com/RafaelGSS/microservice-communication/tree/master/async/competing-worker-pattern)**. Se quiser saber mais sobre esse padrão, [**este](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CompetingConsumers.html)** é um bom start.
+O código desse exemplo está [**aqui**](https://github.com/RafaelGSS/microservice-communication/tree/master/async/competing-worker-pattern). Se quiser saber mais sobre esse padrão, [**este**](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CompetingConsumers.html) é um bom start.
 
 ## Topics Pattern
 
