@@ -145,7 +145,9 @@ E recebemos:
 Validou o tipo do parâmetro! Agora finalmente, vamos mandar o request certo, e verificar seu retorno:
 
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET [http://localhost:3000/](http://localhost:3000/)?anyParam=10
+curl -i -H "Accept: application/json" \
+    -H "Content-Type: application/json" \
+    -X GET [http://localhost:3000/](http://localhost:3000/)?anyParam=10
 ```
 
     {"ok":true}

@@ -95,3 +95,16 @@ h3 a {
     content: "";
   }
 }
+
+code {
+  display: inline-block;
+  max-width: 100%;
+  overflow: auto;
+  min-width: 100%;
+}
+
+pre .sh {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+}
