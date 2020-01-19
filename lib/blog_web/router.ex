@@ -20,8 +20,4 @@ defmodule BlogWeb.Router do
     get "/:slug", PostController, :show
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BlogWeb do
-  #   pipe_through :api
-  # end
 end

@@ -25,16 +25,13 @@
         <hr>
         <ul>
           <li>
+            <a target="_blank" href="https://rafaelgss.github.io/portfolio/">Contact</a>
+          </li>
+          <li>
             <a href="/about">About</a>
           </li>
           <li>
             <a href="<%= Routes.page_path @conn, :index %>">Publications</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-          <li>
-            <a href="/">Blog</a>
           </li>
         </ul>
       </header>
