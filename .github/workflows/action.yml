@@ -33,7 +33,7 @@ jobs:
 
     - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
-      environment:
+      env:
         VIRTUAL_HOST: 'blog.rafaelgss.com.br'
       with:
         host: ${{ secrets.HOST }}
