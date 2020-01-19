@@ -2,9 +2,9 @@ version: '3'
 
 services:
   blog_prod_dockerhub:
-    image: rafaelgss/projects:blog-<TAG>
+    image: rafaelgss/projects:blog-latest
     restart: on-failure
-    container_name: blog_prod;
+    container_name: blog_prod
     environment:
       VIRTUAL_HOST: 'blog.rafaelgss.com.br'
     env_file:

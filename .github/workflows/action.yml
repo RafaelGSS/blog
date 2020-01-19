@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build container image
-      run: docker build -t rafaelgss/projects:blog-$(echo $GITHUB_SHA | head -c7) .
+      run: docker build -t rafaelgss/projects:blog-latest .
 
     - name: Docker Login
       env:
@@ -25,20 +25,18 @@ jobs:
     - name: Push image to Docker Hub
       run: docker push rafaelgss/projects
 
-    - name: Update deployment file
-      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i "s|<TAG>|${TAG}|" $GITHUB_WORKSPACE/docker-compose.yml
-
   deploy:
+    needs: build
     name: Deploy
     runs-on: ubuntu-latest
     steps:
 
-    - name: executing remote ssh commands using password
+    - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.key }}
         port: ${{ secrets.PORT }}
-        script: ls
+        script: cd projects/blog && sh deploy-do.sh
 

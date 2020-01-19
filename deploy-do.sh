@@ -7,5 +7,5 @@ log () {
 log "Initialized deploy";
 docker kill blog_prod;
 log "Container killed";
-docker-compose up -d --build blog_prod;
+docker-compose up -d --build blog_prod_dockerhub;
 log "Deployed!";
