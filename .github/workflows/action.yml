@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build container image
-      run: docker build -t rafaelgss/projects:blog-latest .
+      run: docker build -t rafaelgss/projects:blog-latest prod.dockerfile
 
     - name: Docker Login
       env:
@@ -33,10 +33,16 @@ jobs:
 
     - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
+      environment:
+        VIRTUAL_HOST: 'blog.rafaelgss.com.br'
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.key }}
         port: ${{ secrets.PORT }}
-        script: cd projects/blog && sh deploy-do.sh
+        script: docker kill blog_prod && \
+          docker pull rafaelgss/projects:blog-latest && \
+          docker run -p 4000:4000 -t rafaelgss/projects:blog-latest \
+            -e VIRTUAL_HOST=$VIRTUAL_HOST && \
+          docker ps
 
