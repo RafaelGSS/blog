@@ -45,5 +45,5 @@ jobs:
         envs: VIRTUAL_HOST,SECRET_KEY_BASE,DATABASE_URL
         script: |
           docker pull rafaelgss/projects:blog-latest
-          docker run -d -p 4000:4000 -t rafaelgss/projects:blog-latest -e VIRTUAL_HOST="$VIRTUAL_HOST" -e SECRET_KEY_BASE="$SECRET_KEY_BASE" -e DATABASE_URL="$DATABASE_URL"
+          docker run -d -p 4000:4000 -e VIRTUAL_HOST="$VIRTUAL_HOST" -e SECRET_KEY_BASE="$SECRET_KEY_BASE" -e DATABASE_URL="$DATABASE_URL" -t rafaelgss/projects:blog-latest
 
