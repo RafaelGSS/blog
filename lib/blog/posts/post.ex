@@ -37,7 +37,7 @@ defmodule Blog.Posts.Post do
   defp extract({props, content}, post) do
     %Blog.Posts.Post{post |
       title: get_prop(props, "title"),
-      date: get_prop(props, "date"),
+      date: Timex.parse!(get_prop(props, "date"), "{ISO:Extended}"),
       intro: extract_intro(content),
       text: content}
   end

@@ -20,7 +20,7 @@ defmodule Blog.MixProject do
   def application do
     [
       mod: {Blog.Application, []},
-      extra_applications: [:logger, :runtime_tools, :yamerl]
+      extra_applications: [:logger, :runtime_tools, :yamerl, :timex]
     ]
   end
 
@@ -45,7 +45,8 @@ defmodule Blog.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:earmark, "~> 1.4.3" },
       {:yamerl, "~> 0.7.0"},
-      {:html_sanitize_ex, "~> 1.3.0-rc3"}
+      {:html_sanitize_ex, "~> 1.3.0-rc3"},
+      {:timex, "~> 3.5"}
     ]
   end
 
