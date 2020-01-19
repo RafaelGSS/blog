@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build container image
-      run: docker build -t rafaelgss/projects:blog-latest -f prod.dockerfile
+      run: docker build -t rafaelgss/projects:blog-latest -f prod.dockerfile .
 
     - name: Docker Login
       env:
