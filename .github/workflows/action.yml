@@ -13,9 +13,6 @@ jobs:
     - name: Checkout master
       uses: actions/checkout@master
 
-    - name: Update SHA
-      run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/site/_meta
-
     - name: Build container image
       run: docker build -t rafaelgss/projects:blog-$(echo $GITHUB_SHA | head -c7) .
 
@@ -41,7 +38,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.key }}
         port: ${{ secrets.PORT }}
         script: ls
 
