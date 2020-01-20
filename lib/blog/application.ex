@@ -8,6 +8,7 @@ defmodule Blog.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      { Blog.Posts.PostsManager, Blog.Posts.PostsManager.initialize() },
       # Start the Ecto repository
       Blog.Repo,
       # Start the endpoint when the application starts
