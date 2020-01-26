@@ -6,7 +6,7 @@ defmodule BlogWeb.PageController do
     render conn, "index.html", posts: PostsManager.all_posts
   end
 
-  def contact(conn, _params) do
-    render conn, "contact.html"
+  def about(conn, _params) do
+    render conn, "about.html"
   end
 end

@@ -17,6 +17,7 @@ defmodule BlogWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/about", PageController, :about
     get "/:slug", PostController, :show
   end
 
