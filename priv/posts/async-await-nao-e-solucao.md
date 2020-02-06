@@ -1,6 +1,7 @@
 ---
 title: Async/Await não é solução!
 date: 2019-06-21 10:00
+tags: javascript,tips
 ---
 
 ## Async/Await não é solução!

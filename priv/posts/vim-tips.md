@@ -1,6 +1,7 @@
 ---
 title: Vim Tips
 date: 2020-01-29 22:14
+tags: vim,tips
 ---
 
 # Vim Tips

@@ -22,6 +22,12 @@ defmodule Blog.Posts.PostsManager do
     Agent.get(__MODULE__, &(&1))
   end
 
+  # def get_by_tags(tags) do
+  #   posts = all_posts()
+
+  #   case Enum.find(posts, &(&1.))
+  # end
+
   def get_by_slug(slug) do
     posts = all_posts()
 

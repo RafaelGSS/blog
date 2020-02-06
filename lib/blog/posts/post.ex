@@ -1,5 +1,5 @@
 defmodule Blog.Posts.Post do
-  defstruct title: nil, date: nil, text: nil, intro: nil, slug: nil
+  defstruct title: nil, date: nil, text: nil, intro: nil, slug: nil, tags: nil
 
   alias Blog.Services.MarkdownService
 
@@ -39,6 +39,7 @@ defmodule Blog.Posts.Post do
       title: get_prop(props, "title"),
       date: Timex.parse!(get_prop(props, "date"), "{ISO:Extended}"),
       intro: extract_intro(content),
+      tags: String.split(get_prop(props, "tags"), ","),
       text: content}
   end
 
