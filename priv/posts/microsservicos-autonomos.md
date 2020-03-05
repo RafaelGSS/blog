@@ -117,8 +117,8 @@ and has origins in early mobile computing projects. A system that has achieved e
 Eventual consistency is a weak guarantee – most stronger models, like linearizability are trivially eventually consistent, but a system that is merely eventually consistent does not usually fulfill these stronger constraints."_ -- [Wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 A ideia desse padrão é que quaisquer informações que o serviço X necessite contenha em seu próprio domínio.
-Em nosso contexto, vamos imaginar que precisamos do **nome completo e email** do usuário ao criar uma **Order**, portanto, para o **domínio Order**
-usuário é apenas um conjunto de **full_name e email** onde entra o chamado [**Bounded Context**](https://martinfowler.com/bliki/BoundedContext.html).
+Em nosso contexto, vamos imaginar que precisamos do **nome completo** do usuário ao criar uma **Order**, portanto, para o **domínio Order**
+usuário é apenas um conjunto de **name** onde entra o chamado [**Bounded Context**](https://martinfowler.com/bliki/BoundedContext.html).
 
 ![Example Table](/images/microsservicos-autonomos/table-replication.png)
 
@@ -142,5 +142,5 @@ Não me prolongarei sobre como o Debezium faz, pra isso existe sua excelente [do
 
 Para mostrar na prática, fiz um exemplo bem simples [aqui](https://github.com/RafaelGSS/microservice-debezium-outbox) basta seguir as instruções do README, e voilà!
 
-Qualquer dúvida ~~guarde pra você~~ fale comigo em qualquer rede social.
+Qualquer dúvida ~~guarde pra você~~ fale comigo em qualquer [rede social](https://rafaelgss.github.io/portfolio/).
 
