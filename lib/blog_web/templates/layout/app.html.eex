@@ -19,22 +19,6 @@
 
       gtag('config', 'UA-156375977-1');
     </script>
-    <script type="application/ld+json">
-     {
-      "@context" : "http://schema.org",
-      "@type" : "Article",
-      "name" : "Rafael Gonzaga blog",
-      "author" : {
-        "@type" : "Person",
-        "name" : "Rafael Gonzaga"
-      },
-      "sameAs" : [
-        "https://twitter.com/_rafaelgss",
-        "https://github.com/rafaelgss",
-        "https://linkedin.com/in/rafaelgss"
-      ]
-    }
-</script>
   </head>
   <body>
     <div id="app">

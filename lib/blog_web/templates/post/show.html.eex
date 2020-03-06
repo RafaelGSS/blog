@@ -1,3 +1,19 @@
+<script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "<%= @post.title %>",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Rafael Gonzaga"
+      },
+      "sameAs" : [
+        "https://twitter.com/_rafaelgss",
+        "https://github.com/rafaelgss",
+        "https://linkedin.com/in/rafaelgss"
+      ]
+    }
+</script>
 <section class="post__raw-data">
   <%= raw(@post.text) %>
 </section>
