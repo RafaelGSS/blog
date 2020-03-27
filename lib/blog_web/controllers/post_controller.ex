@@ -1,6 +1,7 @@
 defmodule BlogWeb.PostController do
   use BlogWeb, :controller
   alias Blog.Posts.PostsManager
+  use Logger
 
   def index(conn, _params) do
     render conn, "index.html", posts: PostsManager.all_posts
@@ -14,6 +15,7 @@ defmodule BlogWeb.PostController do
   end
 
   def search(conn, %{"tag" => tag}) do
+    Logger.info("Entered at log")
     case PostsManager.get_by_tags([tag]) do
       {:ok, posts} -> render conn, "index.html", posts: posts
       {:not_found, nil} -> not_found(conn)
