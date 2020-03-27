@@ -22,11 +22,18 @@ defmodule Blog.Posts.PostsManager do
     Agent.get(__MODULE__, &(&1))
   end
 
-  # def get_by_tags(tags) do
-  #   posts = all_posts()
+  def get_by_tags(tags) do
+    posts = all_posts()
 
-  #   case Enum.find(posts, &(&1.))
-  # end
+    posts_tagged = Enum.filter(posts, fn post ->
+      Enum.find(post.tags, &(Enum.member?(tags, &1)))
+    end)
+
+    case posts_tagged do
+      [] -> {:not_found, nil}
+      post -> {:ok, post}
+    end
+  end
 
   def get_by_slug(slug) do
     posts = all_posts()
