@@ -32,10 +32,10 @@
             <a target="_blank" href="https://rafaelgss.github.io/portfolio/">Contact</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="<%= Routes.page_path @conn, :about %>">About</a>
           </li>
           <li>
-            <a href="<%= Routes.page_path @conn, :index %>">Publications</a>
+            <a href="<%= Routes.post_path @conn, :index %>">Publications</a>
           </li>
         </ul>
       </header>
