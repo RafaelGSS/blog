@@ -1,0 +1,27 @@
+<%= for post <- @posts do %>
+<section>
+  <div class="teaser">
+    <h2>
+      <a href="<%= Routes.post_path @conn, :show, post.slug %>"> <%= post.title %>
+      </a>
+    </h2>
+    <div class="posts__extra">
+      <span class="posts__date"><%= relative_date(post.date) %></span>
+      <div class="posts__tags">
+        <%= for tag <- post.tags do %>
+          <a href="
+            <%= Routes.post_path @conn, :search, tag: tag %>
+            " class="posts__tag"><%= tag %></a>
+        <% end %>
+      </div>
+    </div>
+
+    <p>
+      <%= post.intro %>...
+      <a class="more" href="<%= Routes.post_path @conn, :show, post.slug %>">
+        read more
+      </a>
+    </p>
+  </div>
+</section>
+<% end %>
