@@ -5,8 +5,8 @@ config :blog, Blog.Repo,
   username: "root",
   password: "root",
   database: "blog_dev",
-  hostname: "localhost",
-  port: 9005,
+  hostname: "blog_mysql",
+  port: 3306,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
