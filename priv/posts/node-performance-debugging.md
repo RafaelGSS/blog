@@ -1,5 +1,5 @@
 ---
-title: Node Debugging Tools
+title: Node CPU Profiler
 date: 2020-06-13 18:00
 tags: javascript,article
 ---
@@ -185,9 +185,21 @@ Well, based on flamegraph generated previously we can read a simple line as:
 - Asterisk* This is good news meaning that your code was successfully compiled to native code (fast) if you see a tilde (~) that means your code is being interpreted (slow).
 - Path & Line This tells file and line.
 
+Based on previous FlameGraph, we can see that most of part of CPU time is around `middleware/init.js` and `router/index.js`, of course is expected that `express` lib must be most part of CPU time
+because our endpoint just returns `res.end('ok')`. However...
+// Explain the issue or possible issue on express
 
 // Here comment about trace-opt and trace-dopt
+
 // Analyze flamegraph
+
+## Improve!
+
+// Change to Fastify
+
+// Results
+
+// Make it again!
 
 ## Alternative using CDT
 
