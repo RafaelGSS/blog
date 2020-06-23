@@ -186,16 +186,35 @@ Well, based on flamegraph generated previously we can read a simple line as:
 - Path & Line This tells file and line.
 
 Based on previous FlameGraph, we can see that most of part of CPU time is around `middleware/init.js` and `router/index.js`, of course is expected that `express` lib must be most part of CPU time
-because our endpoint just returns `res.end('ok')`. However...
-// Explain the issue or possible issue on express
+because our endpoint just returns `res.end('ok')`. However, the lib is javascript code and could be optimized, we don't go to deep dive into `express` source code, but we can change the _http router_
 
 // Here comment about trace-opt and trace-dopt
 
-// Analyze flamegraph
-
 ## Improve!
 
-// Change to Fastify
+```json
+// package.json
+- "express": "^4.17.1",
++ "fastify": "^2.14.1",
+```
+
+```js
+// index.js
++ const schema = {
++   schema: {
++     response: {
++       200: {
++         type: 'string',
++       }
++     }
++   }
++ }
+
+- app.get('/', (req, res) => {
++ app.get('/', schema, (req, res) => {
+  res.send('ok')
+})
+```
 
 // Results
 
