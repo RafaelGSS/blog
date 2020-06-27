@@ -8,20 +8,22 @@ tags: javascript,article
 
 How we can meansure the performance?
 
-If you are a software engineer, you already think about performance of your nodejs application.
-And probably saw the feature flag: `--inspect` or `--inspect-brk` to enable CDT(Chrome Dev Tools) and meansure performance from there.
-Well, that is nice, but sometimes is not enough. First of all, following the principles of others great engineer's,
-you need to find out what part of your app are the bottleneck: _Extenal_ or _Internal_.
+If you are a software engineer, you have already thought about the performance of your nodejs application.
+And probably saw the feature flag: `--inspect` or `--inspect-brk` to enable CDT(Chrome Dev Tools) and measure performance from there.
+
+Well, that is nice, but sometimes it is not enough. First of all, following the principles of other great engineers,
+you need to find out what part of your app is the bottleneck: External or Internal.
 
 In this article we are cover **Internal improvements**.
 
 ![external-x-internal](/images/node-performance-debugging/external-x-internal.png)
 
-So, sometimes you don't have an application to debug or finding the memory leak. Because of that I created
-[`node-bottleneck`](https://github.com/RafaelGSS/node-bottleneck) is a simple repository containing versions of an web api
-each version has a improvement in comparisson to the past. Feel free to send a PR with an improvement.
+So, sometimes you don’t have an application to debug or finding the memory leak. Because of that,
+I created [`node-bottleneck`](https://github.com/RafaelGSS/node-bottleneck) is a simple repository
+containing versions of a web API each version has an improvement in comparison to the past release.
+Feel free to send a PR with an improvement.
 
-All the data analyze is based on V1 of [`node-bottleneck`](https://github.com/RafaelGSS/node-bottleneck/tree/master/v1).
+All the data analyzed is based on V1 of [`node-bottleneck`](https://github.com/RafaelGSS/node-bottleneck/tree/master/v1).
 
 Specifications:
 
@@ -37,7 +39,7 @@ v12.13.1
 
 ## How slow is it?
 
-So, we need to find a way to meansure your code making a load test. At this point I recommend the following tools:
+We need to find a way to measure your code by doing a load test. At this point, I recommend the following tools:
 
 - HTTP Application
   - /usr/bin/time
@@ -45,8 +47,8 @@ So, we need to find a way to meansure your code making a load test. At this poin
   - [Apache Benchmark](https://httpd.apache.org/docs/2.4/programs/ab.html)
   - [JMeter](https://jmeter.apache.org/)
 
-For event-driven application, I created a tool to only send messages to Kafka: [`kafka-load-consumer`](https://github.com/RafaelGSS/kafka-load-consumer)
-but you can use anything that can meansure the `start` and `end`.
+For event-driven applications, I created a tool to only send messages to Kafka: [`kafka-load-consumer`](https://github.com/RafaelGSS/kafka-load-consumer)
+but you can use anything that can measure the `start` and `end`.
 
 So, first of all we need to use `autocannon`:
 
@@ -79,22 +81,21 @@ Req/Bytes counts sampled once per second.
 148k requests in 11.07s, 18.5 MB read
 ```
 
-Well, is a good result, but we need more! For now, we know that your application can serve 148k requests in 11.07 seconds (I know that is now a absolute result, but is a begining)
+Well, it is a good result, but we need more! For now, we know that our application can serve 148k requests in 11.07 seconds (I know that the results depend over hardware too but it is a beginning)
 
 ## Where is the slowness at?
 
-Has many ways/tools to meansure performance of your app:
+Has many ways/tools to measure performance of your app:
 
 - [linux `perf`](http://www.brendangregg.com/perf.html) - I'll use it.
 - [0x](https://github.com/davidmarkclements/0x)
 - [clinicjs](https://clinicjs.org/)
 - [Chrome Dev Tools](https://developers.google.com/web/updates/2016/12/devtools-javascript-cpu-profile-migration)
 
-`perf` is a kernel-level CPU profilling tool, they capture the **full stack** C++ and JS execution
+`perf` is a kernel-level CPU profiling tool, it capture the **full-stack** C++ and JS execution
 
-Let's check again your app, but with `perf` too:
+Let's check again our app, but now with `perf` too:
 
-// how to use perf - https://brycebaril.github.io/perf_node_interactive/#/19
 ```sh
 # Start your application
 node --perf-basic-prof-only-functions index.js &
@@ -113,7 +114,7 @@ and start the `autocannon` (we can start on perf startup too):
 autocannon -c 10 -d 10 http://localhost:3000/;
 ```
 
-and receive the following data from `autocannon`:
+which provides us with the following data from the `autocannon`:
 
 ```sh
 148k requests in 11.07s, 18.5 MB read
@@ -155,21 +156,21 @@ google-chrome output-graph.svg
 
 [![flamegraph output](/images/node-performance-debugging/flamegraphv1-output.svg)](/images/node-performance-debugging/flamegraphv1-output.svg){:target=_blank}
 
-Going deep on the flame we can see the `express` router taking to longer the CPU use, of course we need be on mind the our endpoint doesn't process anything
+Going deep on the flame we can see the `express` router taking to longer the CPU use, of course, we need be on mind our endpoint doesn't process anything
 we just care about our http router, in these case `express`.
 
 ![flamegraph deep output](/images/node-performance-debugging/flame-express.png)
 
-### Node Profilling Options
+### Node Profiling Options
 
 `--perf-basic-prof-only-functions` and `--perf-basic-prof` seem like the only two you might be initially interested in for debugging your JavaScript code.
 
-These options replace most of functions `V8::Function::Call` to a real function javascript for you indentify in the flamegraph.
-This ocurr because V8 places symbols JIT (Just-in-Time)
+These options replace most of functions `V8::Function::Call` to a real function javascript for you identify in the flamegraph.
+This occur because V8 places symbols JIT (Just-in-Time)
 
 This option was introduced [here](https://codereview.chromium.org/70013002) with description:
 ```
---perf_basic_prof - outputs the files in a format that the existing perf tool
+--perf-basic-prof - outputs the files in a format that the existing perf tool
 can consume. Only 'perf report' is supported.
 ```
 
@@ -185,12 +186,48 @@ Well, based on flamegraph generated previously we can read a simple line as:
 - Asterisk* This is good news meaning that your code was successfully compiled to native code (fast) if you see a tilde (~) that means your code is being interpreted (slow).
 - Path & Line This tells file and line.
 
-Based on previous FlameGraph, we can see that most of part of CPU time is around `middleware/init.js` and `router/index.js`, of course is expected that `express` lib must be most part of CPU time
+Based on previous FlameGraph, we can see that most of part of CPU time is around `middleware/init.js` and `router/index.js`, of course is expected that `express` lib must be the most part of CPU time
 because our endpoint just returns `res.end('ok')`. However, the lib is javascript code and could be optimized, we don't go to deep dive into `express` source code, but we can change the _http router_
 
-// Here comment about trace-opt and trace-dopt
+### Tracking Optimizations
+
+We can track hot paths and possible paths to be optimized here too. Just need to run our app with  `--trace-opt` and `--trace-deopt` flags and analyze output produced by V8.
+Take by example in our `node-bottleneck` v1:
+
+```sh
+$ npm run start:opt
+```
+
+and run
+```sh
+$ autocannon -c 10 -d 10 http://localhost:3000/
+...
+147k requests in 11.08s, 18.4 MB read
+$ autocannon -c 10 -d 10 http://localhost:3000/
+...
+155k requests in 11.07s, 19.4 MB read
+$ autocannon -c 10 -d 10 http://localhost:3000/
+...
+159k requests in 11.07s, 19.9 MB read
+```
+
+> I strongly recommend that do you run these commands three times manually and not `for i in {1..3}; do autocannon -c 10 -d 10 http://localhost:3000/; done;`
+because the kernel could not gives you priority on this test and the results could be: TEST 1 > TEST 2 < TEST 3.
+
+and take a look on results produced by `autocannon`
+
+- In the first round a lot of functions was optimized and gives us `147k requests in 11.08s, 18.4 MB read`
+- In the second round less functions was optimized and gives us `155k requests in 11.07s, 19.4 MB read`
+- In the third round no function has been optimized and give us `159k requests in 11.07s, 19.9 MB read`
+
+> This results should be different on your computer, but must follow the logical result: TEST 1 < TEST 2 < TEST 3.
 
 ## Improve!
+
+After our analysis, we discovered that `middleware/init.js` and `router/index.js` (functions that use more time of CPU) are from `express` and we can change it.
+I strongly recommend [`fastify`](https://fastify.io/) as http router, I wrote a bit about it and you can check [here](https://blog.rafaelgss.com.br/fastify-porque-outro-framework-js).
+
+So, let's change:
 
 ```json
 // package.json
@@ -216,15 +253,24 @@ because our endpoint just returns `res.end('ok')`. However, the lib is javascrip
 })
 ```
 
-// Results
+And now we have the [v2](https://github.com/RafaelGSS/node-bottleneck/tree/master/v2).
 
-// Make it again!
+Running the tests and produce the following results:
 
-## Alternative using CDT
+```sh
+$ autocannon -c 10 -d 10 http://localhost:3001/
+...
+190k requests in 10.09s, 27 MB read
+$ autocannon -c 10 -d 10 http://localhost:3001/
+...
+195k requests in 10.07s, 27.6 MB read
+$ autocannon -c 10 -d 10 http://localhost:3001/
+...
+217k requests in 11.08s, 30.8 MB read
+```
 
-// Explain usage of Load profiles
+So, the results are so impressive, and thinking about a large scale is a good path to choose from.
 
-## Tips os optimization
+**And now?** -- Now you back to the topic **How slow is it** and repeat all again! Remember, the code always can be optimized.
 
-// hidden-classes
-... Adrien talk
+![circle virtuous of performance](/images/node-performance-debugging/virtuous-circle.png)
