@@ -4,7 +4,7 @@ date: 2020-06-13 18:00
 tags: javascript,article
 ---
 
-# Node Debugging Tools (CPU Profiler)
+# Node CPU Profiler
 
 How we can meansure the performance?
 
