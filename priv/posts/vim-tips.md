@@ -76,7 +76,7 @@ var bar = 2
 - `'<` Start of last visual selection
 - `'>` End of last visual selection
 - `m{letter}` create a mark
-- `\`{letter}` use a mark.
+- `'{letter}` use a mark.
 
 ## Register
 
