@@ -1,7 +1,7 @@
 ---
 title: Github Actions + Digital Ocean + Elixir ❤️
 date: 2020-01-19 18:00
-tags: devops,article
+tags: devops,article,pt-BR
 ---
 
 # Github Actions + Digital Ocean + Elixir = ❤️

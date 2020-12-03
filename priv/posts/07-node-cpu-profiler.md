@@ -1,7 +1,7 @@
 ---
 title: Node CPU Profiler
 date: 2020-06-27 18:00
-tags: javascript,article
+tags: performance,nodejs,article,en-US
 ---
 
 # Node CPU Profiler

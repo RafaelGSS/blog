@@ -1,18 +1,18 @@
 ---
 title: Vim Tips
 date: 2020-01-29 22:14
-tags: vim,tips
+tags: vim,tips,en-US
 ---
 
 # Vim Tips
 
-This post is a aggregate of tips that I learned on VIM
+This post is a aggregate of tips that I get it from `vim`
 
 ## The ideal world of VIM
 
 The ideal is **one** keystroke to move and **one** keystroke to execute.
 
-VIM are optimized to repetition with dot `.` keystroke, so much of the commands that we are used to doing in other text editors
+VIM are optimized to repetition with dot `.` keystroke, most of the commands that we are used to do in other text editors
 is not optimized for repetition.
 
 Example - Deletion a word

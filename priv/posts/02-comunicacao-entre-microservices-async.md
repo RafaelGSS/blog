@@ -1,7 +1,7 @@
 ---
 title: Comunicação entre microsserviços - Async
 date: 2019-09-10 10:00
-tags: microservices,article
+tags: architecture,article,pt-BR
 ---
 
 # Comunicação entre Microserviços: Async

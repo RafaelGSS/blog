@@ -1,7 +1,7 @@
 ---
 title: Node Core - Overview Libuv P1
 date: 2019-06-19 18:00
-tags: javascript,tips
+tags: nodejs,tips,pt-BR
 ---
 
 # Node Core: Overview P1

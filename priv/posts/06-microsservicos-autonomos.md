@@ -1,7 +1,7 @@
 ---
 title: Microsservicos Autonomos - Outbox Pattern
 date: 2020-02-15 22:40
-tags: microservices,article
+tags: architecture,article,pt-BR
 ---
 
 # Microsservicos Autonomos - Outbox Pattern
