@@ -87,14 +87,7 @@ channel.subscribe({ timeElapsed, query } => {
 
 Actually, most of the database modules already emit the warning on query slow if you set on the settings. This example is just to show you the main usage of this module.
 
-After key modules support `diagnostics_channel` we are able to have a better observability/tracing of our application without add a lot of complexity in our nodejs code.
-
-For instance, we can have:
-
-- Tracking entire http lifecycle
-- Measure core metrisc of our application easier (event-loop, gc, memory utilization, cpu utilization)
-
-Of course, this feature sounds better for APM Vendors.
+After key modules support `diagnostics_channel` we are able to have a better observability/tracing of our application without add a lot of complexity in our nodejs code. Of course, this feature sounds better for APM Vendors.
 
 ## Why use this module instead of EventEmmiter?
 
