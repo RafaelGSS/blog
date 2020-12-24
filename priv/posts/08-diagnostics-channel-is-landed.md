@@ -17,6 +17,8 @@ This feature is similar to [`EventEmmiter`](https://nodejs.org/api/events.html#e
 
 APM Vendors usually monkey patch every key module to capture the information which `diagnostics_channel` simply publishes as events. Monkey patching generally creates many additional costly closures and can be fragile so it's much safer to rely on more intentional events.
 
+Monkey patching has two major problems: creating closures around everything makes everything slow, and it's also very fragile patches that can easily miss something and break the functionality. With diagnostics_channel, it should never break the publishing API and the overhead should be extremely minimal.
+
 ## Usage
 
 That is a simple api, let's see some examples:
