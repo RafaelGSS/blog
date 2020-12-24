@@ -83,10 +83,23 @@ channel.subscribe({ timeElapsed, query } => {
 })
 ```
 
-Actually, most of database modules already emit the warning on query slow if you set on the settings. This example is just to show you the main usage of this module.
+Actually, most of the database modules already emit the warning on query slow if you set on the settings. This example is just to show you the main usage of this module.
+
+After key modules support `diagnostics_channel` we are able to have a better observability/tracing of our application without add a lot of complexity in our nodejs code.
+
+For instance, we can have:
+
+- Tracking entire http lifecycle
+- Measure core metrisc of our application easier (event-loop, gc, memory utilization, cpu utilization)
+
+Of course, this feature sounds better for APM Vendors.
 
 ## Why use this module instead of EventEmmiter?
 
+// TODO
+
 ## What next?
 
-// Talk about modules adopting this channel and reference fastify-diagnostics-channel
+`diagnostics_channel` is still a experimental module. Since this module is just an API to provide information out-of-box the community should adopt it in their library, it means, add support to this feature in most library around nodejs ecossytem.
+
+For instance, [`Fastify`](http://fastify.io/) already support `diagnostics_channel` through plugin [`fastify-diagnostics-channel`](https://github.com/fastify/fastify-diagnostics-channel).
