@@ -119,3 +119,9 @@ myEmitter.emit('event1');
 `diagnostics_channel` is still a experimental module. Since this module is just an API to provide information out-of-box the community should adopt it in their library, it means, add support to this feature in most library around nodejs ecossytem.
 
 For instance, [`Fastify`](http://fastify.io/) already support `diagnostics_channel` through plugin [`fastify-diagnostics-channel`](https://github.com/fastify/fastify-diagnostics-channel).
+
+---
+
+## Acknowledgment
+
+Thanks to [@Qard](http://stephenbelanger.com/) that's spend time working on it and made the review of this quick introduction.
