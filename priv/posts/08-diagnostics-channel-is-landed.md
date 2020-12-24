@@ -13,7 +13,7 @@ As blog release says:
 > _`diagnostics_channel` is a new experimental module that provides an API to create named channels to report arbitrary message data for diagnostics purposes.
 With `diagnostics_channel`, Node.js core and module authors can publish contextual data about what they are doing at a given time. This could be the hostname and query string of a mysql query, for example. Just create a named channel with dc.channel(name) and call channel.publish(data) to send the data to any listeners to that channel._
 
-This feature is similar to [`EventEmmiter`](https://nodejs.org/api/events.html#events_class_eventemitter), however is optimized enough to propagate data synchronous.
+This feature is similar to [`EventEmmiter`](https://nodejs.org/api/events.html#events_class_eventemitter), however `diagnostics_channel` has less overhead than publish a string-named event to an EventEmitter has. More info about in **_Why use this module instead of EventEmmiter_** section.
 
 APM Vendors usually does `monkey-patch` of every key modules for publish information. In `diagnostics_channel` world, we can avoid it in favor of events.
 
@@ -96,7 +96,21 @@ Of course, this feature sounds better for APM Vendors.
 
 ## Why use this module instead of EventEmmiter?
 
-// TODO
+EventEmitter has an extra cost on every single publish to look up the handler set by the string event name. That's not a huge deal for just a single run, but in a high-frequency scenario where the logic might be repeated thousands, or even millions, of times per second, it adds up fast. Additionally, the lookup cost always happens with `EventEmitter` while with `diagnostics_channel` it only happens when something is actually listening to that specific channel. The intent is for there to be hundreds or even thousands of these channels being reported to at any given time while there might be only a few of those channels being actively observed at any given time. The majority of the time there would be nothing to publish to so it's been intentionally designed to do nothing at all in that case. This design makes it much more suitable as a data firehose whereas a typical `EventEmitter` is really only suited to a more _limited_ set of events.
+
+> `diagnostics_channel` was created to publish/receive billions of events per second.
+
+To clarify the above statement, in fewer words:
+
+```js
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.emit('event1');
+```
+
+`myEmitter` can publish **any** event name, so obviously the lookup takes more time than `diagnostics_channel` approach. 
 
 ## What next?
 
