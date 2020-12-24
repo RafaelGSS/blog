@@ -15,7 +15,7 @@ With `diagnostics_channel`, Node.js core and module authors can publish contextu
 
 This feature is similar to [`EventEmmiter`](https://nodejs.org/api/events.html#events_class_eventemitter), however `diagnostics_channel` has less overhead than publish a string-named event to an EventEmitter has. More info about in **_Why use this module instead of EventEmmiter_** section.
 
-APM Vendors usually does `monkey-patch` of every key modules for publish information. In `diagnostics_channel` world, we can avoid it in favor of events.
+APM Vendors usually monkey patch every key module to capture the information which `diagnostics_channel` simply publishes as events. Monkey patching generally creates many additional costly closures and can be fragile so it's much safer to rely on more intentional events.
 
 ## Usage
 
