@@ -42,19 +42,46 @@ In performance analysis we can split information into three types:
 Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
 Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
 Unknown-Unknowns: These are things you do not know you do not know.  Confused? Let me elaborate, you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you don't know).
-// Explain more about (unknown-unknows can't have visibility because as we know, we don't know these topics)
-// Is normal to have unknown-unknowns (at least, is your job as a researcher in this field)
 
+On architecture diagram creation is obvious to say that _unknowns-unknowns_  is not mappable, after all, you don't know.
 
-// Reference Brendan Greg book
+> Usually there is a lot of unknown-unknows and at least, is your job as a researcher in this field transform the `unknown-unknowns` into `know-unknows`.
 
 ## Observability Tools
 
+As previously mentioned, has observability in our software/architecture is fundamental to perform performance improvements. In this section, I'll briefly show you great tools to use in applications.
+
 ### Tracing
+
+Tracing collects per-event data for analysis. Normally, Tracing tools are not enabled by default, since it adds CPU overhead to capture the data.
+
+Logging (include system log) can be categorized as low-frequency tracing that is enabled by default.
+
+Some common tools:
+
+**system-wide**:
+`tcpdump`: network packet tracing
+`perf`: Linux Performance Events (tracing static and dynamic probes)
+**per-process**:
+`strace`: system call tracing
+`USDT` (Userland Statically Defined Tracing)
+`DTrace`: observability framework that includes a programming language and a tool.
+TracePoints is a great way to observe your software in the production environment. You can use USDT (dynamic probes) or static tracepoints.
+For further information check the _useful links_ section.
 
 ### Profiling
 
-// Reference to Node CPU Profiler
+Profiling characterizes the target by collecting a set of samples of snapshots. CPU usage is a common example where samples are taken of the stack trace to characterize the code paths that are consuming CPU cycles.
+
+**Note**: For further information about Profiling CPU, I've made a blog post doing CPU Profiling in a Node.js application. [Check here](https://blog.rafaelgss.com.br/node-cpu-profiler).
+
+Tools:
+`perf`: Linux Performance Events (profiling)
+`cachegrind`: a Valgrind sub tool, can profile hardware cache usage and be visualized using `kcachegrind`
+
+> `/proc` is a file system interface for kernel statistics, it contains directories where each directory is named after the **PID** of the process. These directories contain a number of files containing information and statistics about each process mapped from kernel data structures.
+
+![Julia Evans - Comic /proc](https://pbs.twimg.com/media/DZ3HpVXXkAEgxpc?format=jpg&name=large) - [reference](https://twitter.com/b0rk/status/981159808832286720/photo/1)
 
 ## Methodologies
 
