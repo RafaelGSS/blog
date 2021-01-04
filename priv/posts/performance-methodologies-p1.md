@@ -60,12 +60,14 @@ Logging (include system log) can be categorized as low-frequency tracing that is
 Some common tools:
 
 **system-wide**:
-`tcpdump`: network packet tracing
-`perf`: Linux Performance Events (tracing static and dynamic probes)
+- `tcpdump`: network packet tracing
+- `perf`: Linux Performance Events (tracing static and dynamic probes)
+
 **per-process**:
-`strace`: system call tracing
-`USDT` (Userland Statically Defined Tracing)
-`DTrace`: observability framework that includes a programming language and a tool.
+- `strace`: system call tracing
+- `USDT` (Userland Statically Defined Tracing)
+- `DTrace`: observability framework that includes a programming language and a tool.
+
 TracePoints is a great way to observe your software in the production environment. You can use USDT (dynamic probes) or static tracepoints.
 For further information check the _useful links_ section.
 
@@ -76,14 +78,18 @@ Profiling characterizes the target by collecting a set of samples of snapshots. 
 **Note**: For further information about Profiling CPU, I've made a blog post doing CPU Profiling in a Node.js application. [Check here](https://blog.rafaelgss.com.br/node-cpu-profiler).
 
 Tools:
-`perf`: Linux Performance Events (profiling)
-`cachegrind`: a Valgrind sub tool, can profile hardware cache usage and be visualized using `kcachegrind`
+
+- `perf`: Linux Performance Events (profiling)
+- `cachegrind`: a Valgrind sub tool, can profile hardware cache usage and be visualized using `kcachegrind`
 
 > `/proc` is a file system interface for kernel statistics, it contains directories where each directory is named after the **PID** of the process. These directories contain a number of files containing information and statistics about each process mapped from kernel data structures.
 
 ![Julia Evans - Comic /proc](https://pbs.twimg.com/media/DZ3HpVXXkAEgxpc?format=jpg&name=large) - [reference](https://twitter.com/b0rk/status/981159808832286720/photo/1)
 
 ## Methodologies
+
+This section will describe three of most used methodologies. Apply a methodology due performance issues is needed, and there is no rule to choose the best approach,
+I would say that past experiences and knowledge in the software definitely will help with that.
 
 // USE
 // Drill-down
