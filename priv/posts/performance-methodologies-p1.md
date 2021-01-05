@@ -99,7 +99,7 @@ Utilization, Saturation and Errors (USE) is an methodology that **should be used
 - **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
 - **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
 
-![Workflow with USE Methodology](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2984f448-cb95-4c73-ba49-84b3b9d6c804/Untitled.png)
+![Workflow with USE Methodology](/images/perfomance-analysis/workflow-use.png)
 
 However, this could be counter-intuitive, a short burst of high utilization can cause saturation and performance issues, even though the overall utilization is low over a long interval. CPU utilization, for example, **can vary dramatically from second to second, so a 5-minute average may disguise short periods of 100% utilization and therefore saturation**.
 
@@ -118,7 +118,7 @@ The USE method is most effective for resources that suffer performance degradati
 
 After you get the list of resources, try to create some metrics for it:
 
-![List of resources to create metric](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e418b341-f19d-40f7-bb95-28c9eca1bb6a/image_(5).png)
+![List of resources to create metric](/images/performance-analysis/list-resources-use.png)
 
 The process of elimination is good for us. Eliminate a possible resource bottleneck may help us to focus on another resource limiting our scope.
 
