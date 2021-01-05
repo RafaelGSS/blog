@@ -91,8 +91,53 @@ Tools:
 This section will describe three of most used methodologies. Apply a methodology due performance issues is needed, and there is no rule to choose the best approach,
 I would say that past experiences and knowledge in the software definitely will help with that.
 
-// USE
-// Drill-down
+### USE
+
+Utilization, Saturation and Errors (USE) is an methodology that **should be used early in performance investigation**. For every resource, check the utilization, saturation, and errors:
+
+- **Resource**: all physical server functional components (CPU, busses, ...)
+- **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
+- **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
+
+![Workflow with USE Methodology](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2984f448-cb95-4c73-ba49-84b3b9d6c804/Untitled.png)
+
+However, this could be counter-intuitive, a short burst of high utilization can cause saturation and performance issues, even though the overall utilization is low over a long interval. CPU utilization, for example, **can vary dramatically from second to second, so a 5-minute average may disguise short periods of 100% utilization and therefore saturation**.
+
+Note: The saturation could not be easier to identify.
+
+The first step is to create a list of resources:
+
+- **CPUs:** sockets, cores, hardware threads (virtual CPUs)
+- **Main memory**: DRAM
+- **Network interfaces**: Ethernet ports
+- **Storage devices**: disks
+- **Controllers**: storage, network
+- **Interconnects**: CPU, memory, I/O
+
+The USE method is most effective for resources that suffer performance degradation under high utilization or saturation, leading to bottlenecks. Fortunately, they are not common system bottlenecks, as they are typically designed to provide an excess of throughput. Unfortunately, if they are the problem, can be difficult to solve.
+
+After you get the list of resources, try to create some metrics for it:
+
+![List of resources to create metric](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e418b341-f19d-40f7-bb95-28c9eca1bb6a/image_(5).png)
+
+The process of elimination is good for us. Eliminate a possible resource bottleneck may help us to focus on another resource limiting our scope.
+
+### Drill Down
+
+The process can involve digging down through deeper layers of the software stack, to hardware if necessary, to find the root cause of the issue.
+
+Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
+
+Such deeper analysis may involve the creation of custom tools and inspection of source code (if available). Here is where most of the drilling takes place, peeling away layers of the software stack as necessary to find the root cause.
+
+**Five Whys**
+
+1. A database has begun to perform poorly for many queries. Why?
+2. It is delayed by disk I/O due to memory paging. Why?
+3. Database memory usage has grown too large. Why?
+4. The allocator is consuming more memory than it should. Why?
+5. The allocator has a memory fragmentation issue.
+
 // Scientific Method
 
 ## CPU Cache
