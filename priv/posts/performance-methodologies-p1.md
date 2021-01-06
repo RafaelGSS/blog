@@ -99,7 +99,7 @@ Utilization, Saturation and Errors (USE) is an methodology that **should be used
 - **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
 - **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
 
-![Workflow with USE Methodology](/images/perfomance-analysis/workflow-use.png)
+![Workflow with USE Methodology](/images/performance-analysis/workflow-use.png)
 
 However, this could be counter-intuitive, a short burst of high utilization can cause saturation and performance issues, even though the overall utilization is low over a long interval. CPU utilization, for example, **can vary dramatically from second to second, so a 5-minute average may disguise short periods of 100% utilization and therefore saturation**.
 
@@ -124,21 +124,30 @@ The process of elimination is good for us. Eliminate a possible resource bottlen
 
 ### Drill Down
 
-The process can involve digging down through deeper layers of the software stack, to hardware if necessary, to find the root cause of the issue.
+The process can involve digging down through deeper layers of the software stack, to hardware if necessary, to find the root cause of the issue. Particularly, I try to apply this methodology whenever that I can; It's hard to apply it without a big picture of your software, but when you get more experience on it, should be easier.
 
-Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
+> Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
 
 Such deeper analysis may involve the creation of custom tools and inspection of source code (if available). Here is where most of the drilling takes place, peeling away layers of the software stack as necessary to find the root cause.
 
+For instance, let's imagine an application that after a month in production environment has begun to perform poorly.
+
 **Five Whys**
 
-1. A database has begun to perform poorly for many queries. Why?
-2. It is delayed by disk I/O due to memory paging. Why?
+1. A database has performing poorly for some queries. Why?
+2. It's delayed by disk I/O due to memory paging. Why?
 3. Database memory usage has grown too large. Why?
-4. The allocator is consuming more memory than it should. Why?
+4. The allocator is consuming more memory than expected. Why?
 5. The allocator has a memory fragmentation issue.
 
-// Scientific Method
+This is a good real sample extracted from [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) book. There is not limit to go deep into _Why?_, but, one has to when the software is performing well.
+
+![Five why - Drill Down](/images/performance-analysis/5-whys.png)
+
+
+### Scientific Method
+
+The _scientific method_  //
 
 ## CPU Cache
 
