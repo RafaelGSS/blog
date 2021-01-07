@@ -20,7 +20,7 @@ Have a clear diagram of software architecture is a great start to move forward.
 
 > The foundation of your software should be resilient to achieve better results.
 
-// DIAGRAM Image
+// DIAGRAM Image (CHECK DOWNLOAD TO AN EXAMPLE)
 
 ## Monitoring
 
@@ -159,6 +159,13 @@ Every _scientific method_ consists:
 
 > To futher information about how _scientific methods_ works, see [here](https://en.wikipedia.org/wiki/Scientific_method)
 
+First, you create a question based on performance problem, for instance: _Why my application have a degradation of throughput?_.
+After, you hypothesize what the cause of poor performance may be, _CPU Miss rate_. Then you construct a test to prove your theory, on this case I would recommend `Valgrind`.
+The results collected by _Testing_ step is analyzed and then you have a better idea of what's happening.
+
+**Note:** Create a hypothesis is not lucky, you should have a clear understanding of your software architecture. A versioning of architectural changes is as important as.
+
+![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
 
 ## CPU Cache
 
