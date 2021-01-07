@@ -147,7 +147,18 @@ This is a good real sample extracted from [System Performance](https://www.goodr
 
 ### Scientific Method
 
-The _scientific method_  //
+The _scientific method_ studies the _unknown_ by making hypotheses and testing them. The `unknown` here can mean the `unknown-unknown` as discussed in [`Know-Unknows`](#know-unknowns) section.
+
+Every _scientific method_ consists:
+
+1. Formulation of a question?
+2. Hypothesis
+3. Prediction
+4. Testing
+5. Analysis
+
+> To futher information about how _scientific methods_ works, see [here](https://en.wikipedia.org/wiki/Scientific_method)
+
 
 ## CPU Cache
 
