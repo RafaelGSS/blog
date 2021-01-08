@@ -20,8 +20,6 @@ Have a clear diagram of software architecture is a great start to move forward.
 
 > The foundation of your software should be resilient to achieve better results.
 
-// DIAGRAM Image (CHECK DOWNLOAD TO AN EXAMPLE)
-
 ## Monitoring
 
 Today, a big part of the market is going to follow distributed systems, as we know, that adds a lot of complexity to your architecture in exchange for scalability (resilience).
@@ -36,6 +34,8 @@ These questions will help to choose the right performance methodology to apply.
 
 ## Known-Unknowns
 
+![Known Unknowns](/images/performance-analysis/diagram-known-unknowns.png)
+
 > _This section is a reference to [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) book by Brendan Gregg._
 
 In performance analysis we can split information into three types:
@@ -46,6 +46,8 @@ Unknown-Unknowns: These are things you do not know you do not know.  Confused? L
 On architecture diagram creation is obvious to say that _unknowns-unknowns_  is not mappable, after all, you don't know.
 
 > Usually there is a lot of unknown-unknows and at least, is your job as a researcher in this field transform the `unknown-unknowns` into `know-unknows`.
+
+The Diagram above map `known-knowns` (Green box) and `known-unknows` (Red box)
 
 ## Observability Tools
 
@@ -167,8 +169,8 @@ The results collected by _Testing_ step is analyzed and then you have a better i
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
 
-## CPU Cache
+## Benchmarking
 
-### Go further in details
+// Limit of benchmarking
 
-// Place here the reference to CPU Usage peak. (aggregate by 5min and 1min)
+// Utilization x Saturation
