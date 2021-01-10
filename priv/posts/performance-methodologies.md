@@ -90,7 +90,7 @@ Tools:
 
 ## Methodologies
 
-This section will describe three of most used methodologies. Apply a methodology due performance issues is needed, and there is no rule to choose the best approach,
+This section will describe three of the most used methodologies. Apply a methodology when performance issues start showing up; there is no rule about choosing the best approach.
 I would say that past experiences and knowledge in the software definitely will help with that.
 
 ### USE
