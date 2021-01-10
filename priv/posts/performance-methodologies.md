@@ -103,7 +103,7 @@ Utilization, Saturation and Errors (USE) is an methodology that **should be used
 
 ![Workflow with USE Methodology](/images/performance-analysis/workflow-use.png)
 
-However, this could be counter-intuitive, a short burst of high utilization can cause saturation and performance issues, even though the overall utilization is low over a long interval. CPU utilization, for example, **can vary dramatically from second to second, so a 5-minute average may disguise short periods of 100% utilization and therefore saturation**.
+Its important to consider that it can be counter-intuitive; a short burst of high utilization can introduce saturation and performance issues even though the overall utilization is low over a long interval. CPU utilization **can change dramatically from second to second** so a 5-minute average may disguise short periods of 100% utilization and therefore lead to saturation.
 
 Note: The saturation could not be easier to identify.
 
