@@ -11,7 +11,7 @@ I've spent a good time studying _performance_ methodologies. Like everything in 
 > _Performance is a field where the more you know, the more you don't know_.
 
 Most applications tend to focus on correctness over performance. The shift towards performance only occurs once it becomes a problem.
-Usually, when it happens you don't have so much time to work on it and this article will show you that: **there is no magic solution**.
+Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
 A lot of work should be done before, this article will consider the reader as a Performance Engineer or someone that must perform work as one.
 
 Before any performance analysis, you **must** understand the application architecture. It should be performed with clear paths of dependencies and third-party services.
