@@ -26,7 +26,7 @@ Today, a big part of the market is adopting distributed systems. As we've come t
 
 It also adds more components to your list of dependencies. Therefore, you should monitor these dependencies to have better visibility when things deviate from a happy path.
 
-We need to monitor every part of Software and Architecture, which will help when we go back to historical metrics to answer some of these questions:
+Each part of the architecture (or software) needs individual monitoring that helps us go back in time and answer some of these questions:
 When the software performance is decreasing?
 When is the peak of the software access?
 How our devices are working on a specific date? Like I/O latency, DNS resolution
