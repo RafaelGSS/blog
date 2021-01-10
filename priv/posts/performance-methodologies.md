@@ -165,6 +165,6 @@ First, define a question based on performance problem; for instance: _Why does m
 Second, build a hypothesis about what the cause of poor performance may be. _CPU Miss rate_? Write a test to prove your theory by for instance using `Valgrind`.
 Collect results from your previous step and analyze how it behaves over time. It will give you a better idea of what components are connected and ultimately affected.
 
-**Note:** Create a hypothesis is not lucky, you should have a clear understanding of your software architecture. A versioning of architectural changes is as important as.
+**Note:** Shaping a hypothesis requires a clear understanding of your software architecture. Versioning your architectural changes can play a key role in understanding sudden changes.
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
