@@ -6,7 +6,7 @@ tags: performance,article,en-US
 
 # Performance Methodologies
 
-I've spent a good time studying _Performance_ methodologies and is fair to say that like everything on CS (Computer Science):
+I've spent a good time studying _performance_ methodologies. Like everything in CS (Computer Science);
 
 > _Performance is a field where the more you know, the more you don't know_.
 
