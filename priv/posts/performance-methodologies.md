@@ -97,7 +97,7 @@ Previous experience with your software architecture will likely be the best way 
 
 Utilization, Saturation and Errors (USE) is an methodology that **should be used early in performance investigation**. For every resource, check the utilization, saturation, and errors:
 
-- **Resource**: all physical server functional components (CPU, busses, ...)
+- **Resource**: server components (CPU, buses, ...)
 - **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
 - **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
 
