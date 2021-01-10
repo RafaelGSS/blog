@@ -45,7 +45,7 @@ Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? Fo
 
 While creating architecture diagrams,  _unknowns-unknowns_  obviously aren't mappable since you don't know about them.
 
-> Usually there is a lot of unknown-unknows and at least, is your job as a researcher in this field transform the `unknown-unknowns` into `know-unknows`.
+> `unknown-unknows` are common. It is your job as a performance engineer to transform the `unknown-unknowns` into `know-unknows`.
 
 The Diagram above map `known-knowns` (Green box) and `known-unknows` (Red box)
 
