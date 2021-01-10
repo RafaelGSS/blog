@@ -159,7 +159,7 @@ Every _scientific method_ consists:
 4. Testing
 5. Analysis
 
-> To futher information about how _scientific methods_ works, see [here](https://en.wikipedia.org/wiki/Scientific_method)
+> For more information about how _scientific methods_, see [here](https://en.wikipedia.org/wiki/Scientific_method)
 
 First, you create a question based on performance problem, for instance: _Why my application have a degradation of throughput?_.
 After, you hypothesize what the cause of poor performance may be, _CPU Miss rate_. Then you construct a test to prove your theory, on this case I would recommend `Valgrind`.
