@@ -51,7 +51,7 @@ The Diagram above map `known-knowns` (Green box) and `known-unknows` (Red box)
 
 ## Observability Tools
 
-As previously mentioned, has observability in our software/architecture is fundamental to perform performance improvements. In this section, I'll briefly show you great tools to use in applications.
+As previously mentioned, achieving observability in our software/architecture is fundamental to perform performance improvements. In this section, I'll walk through a few tools that are great for this purpose.
 
 ### Tracing
 
