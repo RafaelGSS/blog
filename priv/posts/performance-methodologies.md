@@ -162,7 +162,7 @@ Every _scientific method_ consists:
 > For more information about how _scientific methods_, see [here](https://en.wikipedia.org/wiki/Scientific_method)
 
 First, define a question based on performance problem; for instance: _Why does my application have degraded throughput?_.
-After, you hypothesize what the cause of poor performance may be, _CPU Miss rate_. Then you construct a test to prove your theory, on this case I would recommend `Valgrind`.
+Second, build a hypothesis about what the cause of poor performance may be. _CPU Miss rate_? Write a test to prove your theory by for instance using `Valgrind`.
 The results collected by _Testing_ step is analyzed and then you have a better idea of what's happening.
 
 **Note:** Create a hypothesis is not lucky, you should have a clear understanding of your software architecture. A versioning of architectural changes is as important as.
