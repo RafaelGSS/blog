@@ -36,7 +36,7 @@ These questions will help to choose the right performance methodology to apply.
 
 ![Known Unknowns](/images/performance-analysis/diagram-known-unknowns.png)
 
-> _This section is a reference to [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) book by Brendan Gregg._
+> _This section is a reference to the book [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) by the author Brendan Gregg._
 
 In performance analysis we can split information into three types:
 Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
