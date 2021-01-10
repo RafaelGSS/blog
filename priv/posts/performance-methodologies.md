@@ -14,7 +14,7 @@ Most applications tend to focus on correctness over performance. The shift towar
 Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
 A lot of work should be done in early phases of development. This article will consider the reader having the role of  Performance Engineer or having to "act" as one.
 
-Before any performance analysis, you **must** understand the application architecture. It should be performed with clear paths of dependencies and third-party services.
+Prior starting performance analysis, you **must**  understand your application architecture. Any analysis requires clear boundaries and a full understanding of dependencies and third-party services.
 
 Have a clear diagram of software architecture is a great start to move forward.
 
