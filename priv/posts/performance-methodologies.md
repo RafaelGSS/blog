@@ -126,7 +126,7 @@ The process of elimination is good for us. Eliminate a possible resource bottlen
 
 ### Drill Down
 
-The process can involve digging down through deeper layers of the software stack, to hardware if necessary, to find the root cause of the issue. Particularly, I try to apply this methodology whenever that I can; It's hard to apply it without a big picture of your software, but when you get more experience on it, should be easier.
+The process iterates through deeper layers of the software stack – even to hardware if necessary – to find the root cause of the issue. I try to to apply this methodology in every part of the software stack. It's usually harder to do so  without having the bigger picture; but as you get more experienced you start recognizing recurring issues.
 
 > Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
 
