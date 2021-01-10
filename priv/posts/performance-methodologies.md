@@ -99,7 +99,7 @@ Utilization, Saturation and Errors (USE) is an methodology that **should be used
 
 - **Resource**: server components (CPU, buses, ...)
 - **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
-- **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
+- **Saturation**: additional work to be done, likely waiting in a queue. Jobs that cannot be dealt with instantly.
 
 ![Workflow with USE Methodology](/images/performance-analysis/workflow-use.png)
 
