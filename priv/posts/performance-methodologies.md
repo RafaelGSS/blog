@@ -91,7 +91,7 @@ Tools:
 ## Methodologies
 
 This section will describe three of the most used methodologies. Apply a methodology when performance issues start showing up; there is no rule about choosing the best approach.
-I would say that past experiences and knowledge in the software definitely will help with that.
+Previous experience with your software architecture will likely be the best way to make a decision.
 
 ### USE
 
