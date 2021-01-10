@@ -43,7 +43,7 @@ Know-Knows: These are things you know, for instance, you know that you should be
 Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
 Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? For instance: you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you didn't know).
 
-On architecture diagram creation is obvious to say that _unknowns-unknowns_  is not mappable, after all, you don't know.
+While creating architecture diagrams,  _unknowns-unknowns_  obviously aren't mappable since you don't know about them.
 
 > Usually there is a lot of unknown-unknows and at least, is your job as a researcher in this field transform the `unknown-unknowns` into `know-unknows`.
 
