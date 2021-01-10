@@ -16,7 +16,7 @@ A lot of work should be done in early phases of development. This article will c
 
 Prior starting performance analysis, you **must**  understand your application architecture. Any analysis requires clear boundaries and a full understanding of dependencies and third-party services.
 
-Have a clear diagram of software architecture is a great start to move forward.
+A diagram of your software architecture is a great starting point.
 
 > The foundation of your software should be resilient to achieve better results.
 
