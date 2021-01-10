@@ -22,7 +22,7 @@ A diagram of your software architecture is a great starting point.
 
 ## Monitoring
 
-Today, a big part of the market is going to follow distributed systems, as we know, that adds a lot of complexity to your architecture in exchange for scalability (resilience).
+Today, a big part of the market is adopting distributed systems. As we've come to learn, such systems adds a lot of complexity to your architecture in exchange for scalability and availability (resilience).
 
 Also, it adds more components as dependency or dependents. Therefore, you should monitor these components to have better visibility when the world is burning.
 
