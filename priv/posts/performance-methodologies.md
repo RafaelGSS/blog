@@ -41,7 +41,7 @@ These questions will help to choose the right performance methodology to apply.
 In performance analysis we can split information into three types:
 Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
 Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
-Unknown-Unknowns: These are things you do not know you do not know.  Confused? Let me elaborate, you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you don't know).
+Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? For instance: you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you didn't know).
 
 On architecture diagram creation is obvious to say that _unknowns-unknowns_  is not mappable, after all, you don't know.
 
