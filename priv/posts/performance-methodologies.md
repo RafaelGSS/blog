@@ -57,7 +57,7 @@ As previously mentioned, achieving observability in our software/architecture is
 
 Tracing collects per-event data for analysis. Normally, tracing tools are not enabled by default since it adds CPU overhead to capture and send/store the data.
 
-Logging (include system log) can be categorized as low-frequency tracing that is enabled by default.
+Logging (including system logs) can be seen as low-frequency tracing that is enabled by default.
 
 Some common tools:
 
