@@ -128,7 +128,7 @@ The process of elimination is good for us. Eliminate a possible resource bottlen
 
 The process iterates through deeper layers of the software stack – even to hardware if necessary – to find the root cause of the issue. I try to to apply this methodology in every part of the software stack. It's usually harder to do so  without having the bigger picture; but as you get more experienced you start recognizing recurring issues.
 
-> Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
+> Collecting and monitoring metrics is fundamental. Without it, we cannot fix the bugs the components cause.
 
 Such deeper analysis may involve the creation of custom tools and inspection of source code (if available). Here is where most of the drilling takes place, peeling away layers of the software stack as necessary to find the root cause.
 
