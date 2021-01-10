@@ -168,9 +168,3 @@ The results collected by _Testing_ step is analyzed and then you have a better i
 **Note:** Create a hypothesis is not lucky, you should have a clear understanding of your software architecture. A versioning of architectural changes is as important as.
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
-
-## Benchmarking
-
-// Limit of benchmarking
-
-// Utilization x Saturation
