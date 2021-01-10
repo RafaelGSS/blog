@@ -132,7 +132,7 @@ The process iterates through deeper layers of the software stack – even to har
 
 Such deeper analysis may involve the creation of custom tools and inspection of source code (if available). Here is where most of the drilling takes place, peeling away layers of the software stack as necessary to find the root cause.
 
-For instance, let's imagine an application that after a month in production environment has begun to perform poorly.
+Imagine an application that after a month in an production environment has begun to perform poorly.
 
 **Five Whys**
 
