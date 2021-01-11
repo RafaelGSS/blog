@@ -8,7 +8,7 @@ tags: performance,article,en-US
 
 I've spent a good time studying _performance_ methodologies. Like everything in CS (Computer Science);
 
-> _Performance is a field where the more you know, the more you don't know_.
+> _Performance is a field where the more you know, the less you understand_.
 
 Most applications tend to focus on correctness over performance. The shift towards performance only occurs once it becomes a problem.
 Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
