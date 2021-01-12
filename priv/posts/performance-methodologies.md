@@ -116,6 +116,8 @@ The first step is to create a list of resources:
 - **Controllers**: storage, network
 - **Interconnects**: CPU, memory, I/O
 
+> Virtual resources are fundamentally different than dedicated hardware. Especially as your resources are both shared and intentionally throttled. Some - if not all - cloud providers make their money by overselling and betting on idle processes.
+
 The USE method is most effective for resources that suffer performance degradation under high utilization or saturation, leading to bottlenecks. Fortunately, they are not common system bottlenecks, as they are typically designed to provide an excess of throughput. Unfortunately, if they are the problem, can be difficult to solve.
 
 After you get the list of resources, try to create some metrics for it:
