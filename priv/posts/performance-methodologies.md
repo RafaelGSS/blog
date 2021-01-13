@@ -6,29 +6,29 @@ tags: performance,article,en-US
 
 # Performance Methodologies
 
-I've spent a good time studying _Performance_ methodologies and is fair to say that like everything on CS (Computer Science):
+I've spent a good time studying _performance_ methodologies. Like everything in CS (Computer Science);
 
-> _Performance is a field where the more you know, the more you don't know_.
+> _Performance is a field where the more you know, the less you understand_.
 
-Most applications tend to focus on correctness instead of performance, it's common to care about performance when it becomes a problem.
-Usually, when it happens you don't have so much time to work on it and this article will show you that: **there is no magic solution**.
-A lot of work should be done before, this article will consider the reader as a Performance Engineer or someone that must perform work as one.
+Most applications tend to focus on correctness over performance. The shift towards performance only occurs once it becomes a problem.
+Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
+A lot of work should be done in early phases of development. This article will consider the reader having the role of  Performance Engineer or having to "act" as one.
 
-Before any performance analysis, you **must** understand the application architecture. It should be performed with clear paths of dependencies and third-party services.
+Prior starting performance analysis, you **must**  understand your application architecture. Any analysis requires clear boundaries and a full understanding of dependencies and third-party services.
 
-Have a clear diagram of software architecture is a great start to move forward.
+A diagram of your software architecture is a great starting point.
 
 > The foundation of your software should be resilient to achieve better results.
 
 ## Monitoring
 
-Today, a big part of the market is going to follow distributed systems, as we know, that adds a lot of complexity to your architecture in exchange for scalability (resilience).
+Today, a big part of the market is adopting distributed systems. As we've come to learn, such systems adds a lot of complexity to your architecture in exchange for scalability and availability (resilience).
 
-Also, it adds more components as dependency or dependents. Therefore, you should monitor these components to have better visibility when the world is burning.
+It also adds more components to your list of dependencies. Therefore, you should monitor these dependencies to have better visibility when things deviate from a happy path.
 
-We need to monitor every part of Software and Architecture, which will help when we go back to historical metrics to answer some of these questions:
-When the software performance is decreasing?
-When is the peak of the software access?
+Each part of the architecture (or software) needs individual monitoring that helps us go back in time and answer some of these questions:
+When started the software performing worse?
+During what timing window are we seeing most access/traffic?
 How our devices are working on a specific date? Like I/O latency, DNS resolution
 These questions will help to choose the right performance methodology to apply.
 
@@ -36,28 +36,28 @@ These questions will help to choose the right performance methodology to apply.
 
 ![Known Unknowns](/images/performance-analysis/diagram-known-unknowns.png)
 
-> _This section is a reference to [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) book by Brendan Gregg._
+> _This section is a reference to the book [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) by the author Brendan Gregg._
 
 In performance analysis we can split information into three types:
 Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
 Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
-Unknown-Unknowns: These are things you do not know you do not know.  Confused? Let me elaborate, you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you don't know).
+Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? For instance: you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you didn't know).
 
-On architecture diagram creation is obvious to say that _unknowns-unknowns_  is not mappable, after all, you don't know.
+While creating architecture diagrams,  _unknowns-unknowns_  obviously aren't mappable since you don't know about them.
 
-> Usually there is a lot of unknown-unknows and at least, is your job as a researcher in this field transform the `unknown-unknowns` into `know-unknows`.
+> `unknown-unknows` are common. It is your job as a performance engineer to transform the `unknown-unknowns` into `know-unknows`.
 
 The Diagram above map `known-knowns` (Green box) and `known-unknows` (Red box)
 
 ## Observability Tools
 
-As previously mentioned, has observability in our software/architecture is fundamental to perform performance improvements. In this section, I'll briefly show you great tools to use in applications.
+As previously mentioned, achieving observability in our software/architecture is fundamental to perform performance improvements. In this section, I'll walk through a few tools that are great for this purpose.
 
 ### Tracing
 
-Tracing collects per-event data for analysis. Normally, Tracing tools are not enabled by default, since it adds CPU overhead to capture the data.
+Tracing collects per-event data for analysis. Normally, tracing tools are not enabled by default since it adds CPU overhead to capture and send/store the data.
 
-Logging (include system log) can be categorized as low-frequency tracing that is enabled by default.
+Logging (including system logs) can be seen as low-frequency tracing that is enabled by default.
 
 Some common tools:
 
@@ -90,20 +90,20 @@ Tools:
 
 ## Methodologies
 
-This section will describe three of most used methodologies. Apply a methodology due performance issues is needed, and there is no rule to choose the best approach,
-I would say that past experiences and knowledge in the software definitely will help with that.
+This section will describe three of the most used methodologies. Apply a methodology when performance issues start showing up; there is no rule about choosing the best approach.
+Previous experience with your software architecture will likely be the best way to make a decision.
 
 ### USE
 
 Utilization, Saturation and Errors (USE) is an methodology that **should be used early in performance investigation**. For every resource, check the utilization, saturation, and errors:
 
-- **Resource**: all physical server functional components (CPU, busses, ...)
+- **Resource**: server components (CPU, buses, ...)
 - **Utilization**: for a set time interval, the percentage of time that the resource was busy servicing work. While busy, the resource may **still be able to accept more work**.
-- **Saturation**: Extra work, often waiting on a queue. Are jobs that service cannot deal at moment.
+- **Saturation**: additional work to be done, likely waiting in a queue. Jobs that cannot be dealt with instantly.
 
 ![Workflow with USE Methodology](/images/performance-analysis/workflow-use.png)
 
-However, this could be counter-intuitive, a short burst of high utilization can cause saturation and performance issues, even though the overall utilization is low over a long interval. CPU utilization, for example, **can vary dramatically from second to second, so a 5-minute average may disguise short periods of 100% utilization and therefore saturation**.
+Its important to consider that it can be counter-intuitive; a short burst of high utilization can introduce saturation and performance issues even though the overall utilization is low over a long interval. CPU utilization **can change dramatically from second to second** so a 5-minute average may disguise short periods of 100% utilization and therefore lead to saturation.
 
 Note: The saturation could not be easier to identify.
 
@@ -128,13 +128,13 @@ The process of elimination is good for us. Eliminate a possible resource bottlen
 
 ### Drill Down
 
-The process can involve digging down through deeper layers of the software stack, to hardware if necessary, to find the root cause of the issue. Particularly, I try to apply this methodology whenever that I can; It's hard to apply it without a big picture of your software, but when you get more experience on it, should be easier.
+The process iterates through deeper layers of the software stack – even to hardware if necessary – to find the root cause of the issue. I try to to apply this methodology in every part of the software stack. It's usually harder to do so  without having the bigger picture; but as you get more experienced you start recognizing recurring issues.
 
-> Analysis (Monitoring) is the base of all! Without it, we can't fix any bug.
+> Collecting and monitoring metrics is fundamental. Without it, we cannot fix the bugs the components cause.
 
 Such deeper analysis may involve the creation of custom tools and inspection of source code (if available). Here is where most of the drilling takes place, peeling away layers of the software stack as necessary to find the root cause.
 
-For instance, let's imagine an application that after a month in production environment has begun to perform poorly.
+Imagine an application that after a month in an production environment has begun to perform poorly.
 
 **Five Whys**
 
@@ -160,13 +160,13 @@ Every _scientific method_ consists:
 4. Testing
 5. Analysis
 
-> To futher information about how _scientific methods_ works, see [here](https://en.wikipedia.org/wiki/Scientific_method)
+> For more information about how _scientific methods_, see [here](https://en.wikipedia.org/wiki/Scientific_method)
 
-First, you create a question based on performance problem, for instance: _Why my application have a degradation of throughput?_.
-After, you hypothesize what the cause of poor performance may be, _CPU Miss rate_. Then you construct a test to prove your theory, on this case I would recommend `Valgrind`.
-The results collected by _Testing_ step is analyzed and then you have a better idea of what's happening.
+First, define a question based on performance problem; for instance: _Why does my application have degraded throughput?_.
+Second, build a hypothesis about what the cause of poor performance may be. _CPU Miss rate_? Write a test to prove your theory by for instance using `Valgrind`.
+Collect results from your previous step and analyze how it behaves over time. It will give you a better idea of what components are connected and ultimately affected.
 
-**Note:** Create a hypothesis is not lucky, you should have a clear understanding of your software architecture. A versioning of architectural changes is as important as.
+**Note:** Shaping a hypothesis requires a clear understanding of your software architecture. Versioning your architectural changes can play a key role in understanding sudden changes.
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
 
