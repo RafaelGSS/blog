@@ -148,7 +148,6 @@ This is a good real sample extracted from [System Performance](https://www.goodr
 
 ![Five why - Drill Down](/images/performance-analysis/5-whys.png)
 
-
 ### Scientific Method
 
 The _scientific method_ studies the _unknown_ by making hypotheses and testing them. The `unknown` here can mean the `unknown-unknown` as discussed in [`Know-Unknows`](#know-unknowns) section.
@@ -171,11 +170,15 @@ The results collected by _Testing_ step is analyzed and then you have a better i
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
 
-## Benchmarking
+## Real-World Examples
 
-// Limit of benchmarking
+Usually, when a system boots the memory usage starts to grow as the operating system uses available memory to cache file system improving performance.
+A system may report that it has only 10 MB of available memory when it actually has 10 GB of file system cache that can be reclaimed by applications immediately when needed.
 
-// Utilization x Saturation
+A common source of confusion is the endless growth of heap. It's not a memory leak, the `free()` in most allocators doesn't return memory to the operating system; rather, it keeps it ready to serve future allocations.
+
+> This means the process resident memory will only ever grow, which is normal.
+
 
 ## Acknowledgement
 
