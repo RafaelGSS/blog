@@ -6,13 +6,19 @@ tags: performance,article,en-US
 
 # Performance Methodologies
 
-I've spent a good time studying _performance_ methodologies. Like everything in CS (Computer Science);
-
-> _Performance is a field where the more you know, the less you understand_.
+Poor performance costs the software industry millions of dollars annually in lost revenue, decreased productivity, increased development and hardware costs, and damaged customer
+relations.
 
 Most applications tend to focus on correctness over performance. The shift towards performance only occurs once it becomes a problem.
 Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
 A lot of work should be done in early phases of development. This article will consider the reader having the role of  Performance Engineer or having to "act" as one.
+
+The reality is that some companies devotees of "agile" methodology, adopt the same order to every software development process: Idea -> MVP -> Feature -> "Refactor". One only needs some time in this methodology to understand that it's not quite like that.
+The result is that, somewhere near the end of the project, performance issues appear.
+
+> _Performance is a field where the more you know, the less you understand_.
+
+Regardless of the source, when a performance issue appears it should be fixed immediately and there are few ways: fix the problem in the source (or at least understand it) or spending money on hardware resources. The second path in some time will lead to the same problem.
 
 Prior starting performance analysis, you **must**  understand your application architecture. Any analysis requires clear boundaries and a full understanding of dependencies and third-party services.
 
