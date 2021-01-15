@@ -185,6 +185,17 @@ A common source of confusion is the endless growth of heap. It's not a memory le
 
 > This means the process resident memory will only ever grow, which is normal.
 
+Based on the last statement, let's think about the following _ticket_:
+
+> _"The application suddenly starts to performing bad after an upgrade of memory (RAM) by 8gb to 128gb. This upgrade was done 6 hours ago."_
+
+Main memory utilization can be calculated as used memory versus total memory. Memory used by the file system cache can be treated as unused, as it is available for reuse by applications.
+
+The ticket already shows one of the great starting point, the memory.
+
+> Minor page faults happen when the CPU is trying to access a virtual memory address which is not in its small, fast TLB cache and, as results, it has to lookup a larger (and slower) mapping table stored in know DRAM address.
+
+// Perform Scientific Method
 
 ## Acknowledgement
 
