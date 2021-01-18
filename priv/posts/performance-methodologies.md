@@ -176,7 +176,7 @@ Collect results from your previous step and analyze how it behaves over time. It
 
 ![Scientific Method Steps](/images/performance-analysis/scientific-method-steps.png)
 
-## Real-World Examples
+## Memory
 
 Usually, when a system boots the memory usage starts to grow as the operating system uses available memory to cache file system improving performance.
 A system may report that it has only 10 MB of available memory when it actually has 10 GB of file system cache that can be reclaimed by applications immediately when needed.
@@ -185,18 +185,60 @@ A common source of confusion is the endless growth of heap. It's not a memory le
 
 > This means the process resident memory will only ever grow, which is normal.
 
-Based on the last statement, let's think about the following _ticket_:
-
-> _"The application suddenly starts to performing bad after an upgrade of memory (RAM) by 8gb to 128gb. This upgrade was done 6 hours ago."_
-
 Main memory utilization can be calculated as used memory versus total memory. Memory used by the file system cache can be treated as unused, as it is available for reuse by applications.
 
-The ticket already shows one of the great starting point, the memory.
 
-> Minor page faults happen when the CPU is trying to access a virtual memory address which is not in its small, fast TLB cache and, as results, it has to lookup a larger (and slower) mapping table stored in know DRAM address.
+## CPU
 
-// Perform Scientific Method
+The next figure shows an example CPU architecture, for a single processor with four cores and eight hardware threads in total.
+
+![CPU Architecture](/images/performance-analysis/cpu-architecture.png)
+
+Each hardware thread is addressable as a logical CPU, so this processor appears as eight CPUs. The operating system may have some additional knowledge of topology, such as which CPUs are on the same core, to improve its scheduling decisions.
+
+Processors provide various hardware caches for improving memory I/O performance.
+
+![CPU Layers](/images/performance-analysis/cpu-cache-layers.png)
+
+**Clock-rate:** The clock is a digital signal that drives all processor logic. Each CPU instruction may take one or more cycles of the clock (called CPU cycles) to execute. CPUs execute at a particular clock rate; for example, a 5 GHz CPU performs 5 billion clock cycles per second.
+
+**CPI:** Cycles per instruction is an important high-level metric for describing where a CPU is spending its clock cycles and for understanding the nature of CPU utilization.
+
+High CPU utilization may not necessarily be a problem, but rather a sign that the system is doing work. *(go to CPU 6.3 to a deep dive)*
+
+As I already knew on Operation System occur the **preemption** that allows a higher-priority thread to preempt the currently running thread and begin its own execution instead.
+
+---
+
+**MMU (Memory Management Unit)**
+
+The MMU is responsible for virtual-to-physical address translation.
+
+This MMU uses an on-chip TLB to cache address translations. Cache misses are satisfied by translation tables in main memory (DRAM), called page tables, which are read directly by the MMU (hardware).
+
+![Memory Architecture](/images/performance-analysis/mmu-architecture.png)
+
+---
+
+**Tools to CPU analysis**
+
+For CPUs, the tools method can involve checking the following: 
+
+- uptime: Check load averages to see if CPU load is increasing or decreasing over time. A load average over the number of CPUs in the system usually indicates saturation.
+- vmstat: Run vmstat per second, and check the idle column to see how much headroom there is. Less than 10% can be a problem.
+- mpstat: Check for individual hot (busy) CPUs, identifying a possible thread scalability problem.
+- top/prstat: See which processes and users are the top CPU consumers.
+- pidstat/prstat: Break down the top CPU consumers into user and system-time.
+- perf/dtrace/stap/oprofile: Profile CPU usage stack traces for either user or kernel-time, to identify why the CPUs are in use.
+- perf/cpustat: Measure CPI
+
+// Example MIT
 
 ## Acknowledgement
 
 Thanks to [@jbergstroem](https://github.com/jbergstroem)
+
+# References
+
+// Brendan Gregg
+// MIT Course
