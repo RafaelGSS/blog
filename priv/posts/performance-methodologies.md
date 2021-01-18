@@ -234,6 +234,18 @@ For CPUs, the tools method can involve checking the following:
 
 // Example MIT
 
+## Real World Example
+
+The last section, CPU Cache was mentioned. Take a look in the following example:
+
+> An application are performing bad, and based in the monitoring report, are performing a CPU Intensive workload.
+
+// Place the code over here
+
+// Valgrind cachegrind analysis
+
+// New code with new benchmark
+
 ## Acknowledgement
 
 Thanks to [@jbergstroem](https://github.com/jbergstroem)
