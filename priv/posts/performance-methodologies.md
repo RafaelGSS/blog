@@ -33,9 +33,11 @@ Today, a big part of the market is adopting distributed systems. As we've come t
 It also adds more components to your list of dependencies. Therefore, you should monitor these dependencies to have better visibility when things deviate from a happy path.
 
 Each part of the architecture (or software) needs individual monitoring that helps us go back in time and answer some of these questions:
-When started the software performing worse?
-During what timing window are we seeing most access/traffic?
-How our devices are working on a specific date? Like I/O latency, DNS resolution
+
+- When started the software performing worse?
+- During what timing window are we seeing most access/traffic?
+- How our devices are working on a specific date? Like I/O latency, DNS resolution
+
 These questions will help to choose the right performance methodology to apply.
 
 ## Known-Unknowns
@@ -45,9 +47,10 @@ These questions will help to choose the right performance methodology to apply.
 > _This section is a reference to the book [System Performance](https://www.goodreads.com/book/show/18058001-systems-performance) by the author Brendan Gregg._
 
 In performance analysis we can split information into three types:
-Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
-Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
-Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? For instance: you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you didn't know).
+
+- Know-Knows: These are things you know, for instance, you know that you should be checking CPU utilization **and** you know that the value is 10% on average.
+- Know-Unknows: There are things that you know that you do not know. You know that an increase in API response time can be related to a third-party component, but you don't have metrics showing it.
+- Unknown-Unknowns: These are things you are unaware of not knowing. Confusing? For instance: you may not know that DNS resolution can become heavy I/O latency, so you are not checking them (because you didn't know).
 
 While creating architecture diagrams,  _unknowns-unknowns_  obviously aren't mappable since you don't know about them.
 
@@ -96,7 +99,7 @@ Tools:
 
 ## Methodologies
 
-This section will describe three of the most used methodologies. Apply a methodology when performance issues start showing up; there is no rule about choosing the best approach.
+This section will describe three of the most used methodologies (by me at least). Apply a methodology when performance issues start showing up; there is no rule about choosing the best approach.
 Previous experience with your software architecture will likely be the best way to make a decision.
 
 ### USE
@@ -169,7 +172,9 @@ Every _scientific method_ consists:
 > For more information about how _scientific methods_, see [here](https://en.wikipedia.org/wiki/Scientific_method)
 
 First, define a question based on performance problem; for instance: _Why does my application have degraded throughput?_.
+
 Second, build a hypothesis about what the cause of poor performance may be. _CPU Miss rate_? Write a test to prove your theory by for instance using `Valgrind`.
+
 Collect results from your previous step and analyze how it behaves over time. It will give you a better idea of what components are connected and ultimately affected.
 
 **Note:** Shaping a hypothesis requires a clear understanding of your software architecture. Versioning your architectural changes can play a key role in understanding sudden changes.
@@ -187,7 +192,6 @@ A common source of confusion is the endless growth of heap. It's not a memory le
 
 Main memory utilization can be calculated as used memory versus total memory. Memory used by the file system cache can be treated as unused, as it is available for reuse by applications.
 
-
 ## CPU
 
 The next figure shows an example CPU architecture, for a single processor with four cores and eight hardware threads in total.
@@ -200,13 +204,7 @@ Processors provide various hardware caches for improving memory I/O performance.
 
 ![CPU Layers](/images/performance-analysis/cpu-cache-layers.png)
 
-**Clock-rate:** The clock is a digital signal that drives all processor logic. Each CPU instruction may take one or more cycles of the clock (called CPU cycles) to execute. CPUs execute at a particular clock rate; for example, a 5 GHz CPU performs 5 billion clock cycles per second.
-
-**CPI:** Cycles per instruction is an important high-level metric for describing where a CPU is spending its clock cycles and for understanding the nature of CPU utilization.
-
-High CPU utilization may not necessarily be a problem, but rather a sign that the system is doing work. *(go to CPU 6.3 to a deep dive)*
-
-As I already knew on Operation System occur the **preemption** that allows a higher-priority thread to preempt the currently running thread and begin its own execution instead.
+> High CPU utilization may not necessarily be a problem, but rather a sign that the system is doing work.
 
 ---
 
@@ -227,30 +225,138 @@ For CPUs, the tools method can involve checking the following:
 - uptime: Check load averages to see if CPU load is increasing or decreasing over time. A load average over the number of CPUs in the system usually indicates saturation.
 - vmstat: Run vmstat per second, and check the idle column to see how much headroom there is. Less than 10% can be a problem.
 - mpstat: Check for individual hot (busy) CPUs, identifying a possible thread scalability problem.
-- top/prstat: See which processes and users are the top CPU consumers.
-- pidstat/prstat: Break down the top CPU consumers into user and system-time.
-- perf/dtrace/stap/oprofile: Profile CPU usage stack traces for either user or kernel-time, to identify why the CPUs are in use.
-- perf/cpustat: Measure CPI
+- top/htop: See which processes and users are the top CPU consumers.
+- perf: Measure CPI
 
-// Example MIT
-
-## Real World Example
+## Performance Issue Example
 
 The last section, CPU Cache was mentioned. Take a look in the following example:
 
-> An application are performing bad, and based in the monitoring report, are performing a CPU Intensive workload.
+> _"An application are performing bad, and based in the monitoring report, is performing a CPU Intensive workload_"
 
-// Place the code over here
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/time.h>
 
-// Valgrind cachegrind analysis
+#define n 2000
 
-// New code with new benchmark
+double A[n][n];
+double B[n][n];
+double C[n][n];
+
+float tdiff(struct timeval* start, struct timeval* end) {
+  return (end->tv_sec - start->tv_sec) +
+    1e-6 * (end->tv_usec - start->tv_usec);
+}
+
+int main(int argc, const char* argv[]) {
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      A[i][j] = (double)rand() / (double)RAND_MAX;
+      B[i][j] = (double)rand() / (double)RAND_MAX;
+      C[i][j] = 0;
+    }
+  }
+
+  struct timeval start, end;
+
+  gettimeofday(&start, NULL);
+
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      for (int k = 0; k < n; ++k) {
+        C[i][j] += A[i][k] * B[k][j];
+      }
+    }
+  }
+
+  gettimeofday(&end, NULL);
+  printf("%0.6f\n", tdiff(&start, &end));
+  return 0;
+}
+```
+
+The code are spending around of 50 seconds in the server machine. It should be improved by a factor of 10 (following the SLO of application).
+
+> The time elapsed varies by machine, of course.
+
+To this performance issue, I would perform the _Scientific Method_ approach:
+
+1. Question. Why this application are performing poorly?
+2. Hypothesis. The ticket shows that application are spending time in CPU intensive operations. The source code tell us that it could has high CPU Cache miss.
+3. Prediction. Improve the spatial locality through vector access will get better cache hit.
+4. Testing. Use `cachegrind` or `perf` to calculate cache hit miss.
+5. Analysis
+
+Each processor reads and writes main memory in contiguos blocks, called `cache lines`. Although Caches, it has two key terminologies:
+
+- `Cache hit` - Accesses to data in cache (fast)
+- `Cache misses` - Accesses to data not in chace - (slow)
+
+The `perf` is a great tool to perform with a small overhead cache misses:
+
+```sh
+sudo perf stat -e cache-references,cache-misses ./main.o
+
+52.590355
+
+ Performance counter stats for './main.o':
+
+    11.641.838.626      cache-references
+     1.036.364.121      cache-misses              #    8,902 % of all cache refs
+
+      52,674319792 seconds time elapsed
+
+      51,162040000 seconds user
+       0,083826000 seconds sys
+```
+
+10% of cache misses is a great point of improvement. This code are performing a bad spartial locality.
+
+**The order of for loop matters!** Switch the `for-j` to `for-k` will improve the cache hit.
+
+```diff
+  for (int i = 0; i < n; ++i) {
+-   for (int j = 0; j < n; ++j) {
++   for (int k = 0; k < n; ++k) {
+-     for (int k = 0; k < n; ++k) {
++     for (int j = 0; j < n; ++j) {
+        C[i][j] += A[i][k] * B[k][j];
+      }
+    }
+  }
+```
+
+Running the application again, it gets:
+
+```sh
+sudo perf stat -e cache-references,cache-misses ./main.o
+
+3.184440
+
+ Performance counter stats for './main.o':
+
+     2.572.702.714      cache-references
+        46.695.681      cache-misses              #    1,815 % of all cache refs
+
+       3,274432507 seconds time elapsed
+
+       3,157639000 seconds user
+       0,040020000 seconds sys
+```
+
+Almost 17x faster!
+
+Of course, this is a sample. In real-world issues, there are several variables to consider and is normal when a scientific method doesn't give an immediate result, but only through attempts, it gives better visibility and improves the application.
 
 ## Acknowledgement
 
-Thanks to [@jbergstroem](https://github.com/jbergstroem)
+Thanks to [@jbergstroem](https://github.com/jbergstroem) for reviewing this post.
 
 # References
 
-// Brendan Gregg
-// MIT Course
+[System Performance: Enterprise and the Cloud](https://www.goodreads.com/book/show/18058001-systems-performance)
+[MIT 6172](https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf)
+[Spatial Locality](https://en.wikipedia.org/wiki/Locality_of_reference#:~:text=Spatial%20locality%20(also%20termed%20data,in%20a%20one%2Ddimensional%20array.)
+[Linux Perf](https://perf.wiki.kernel.org/index.php/Main_Page)
