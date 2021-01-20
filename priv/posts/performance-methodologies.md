@@ -346,7 +346,7 @@ sudo perf stat -e cache-references,cache-misses ./main.o
        0,040020000 seconds sys
 ```
 
-Almost 17x faster!
+Almost **17x faster**!
 
 Of course, this is a sample. In real-world issues, there are several variables to consider and is normal when a scientific method doesn't give an immediate result, but only through attempts, it gives better visibility and improves the application.
 
@@ -356,7 +356,7 @@ Thanks to [@jbergstroem](https://github.com/jbergstroem) for reviewing this post
 
 # References
 
-[System Performance: Enterprise and the Cloud](https://www.goodreads.com/book/show/18058001-systems-performance)
-[MIT 6172](https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf)
-[Spatial Locality](https://en.wikipedia.org/wiki/Locality_of_reference#:~:text=Spatial%20locality%20(also%20termed%20data,in%20a%20one%2Ddimensional%20array.)
-[Linux Perf](https://perf.wiki.kernel.org/index.php/Main_Page)
+- [System Performance: Enterprise and the Cloud](https://www.goodreads.com/book/show/18058001-systems-performance)
+- [MIT 6172](https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf)
+- [Spatial Locality](https://en.wikipedia.org/wiki/Locality_of_reference)
+- [Linux Perf](https://perf.wiki.kernel.org/index.php/Main_Page)
