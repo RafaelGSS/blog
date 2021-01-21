@@ -294,7 +294,7 @@ Each processor reads and writes main memory in contiguos blocks, called `cache l
 - `Cache hit` - Accesses to data in cache (fast)
 - `Cache misses` - Accesses to data not in chace - (slow)
 
-The `perf` is a great tool to perform with a small overhead cache misses:
+The `perf` is a great tool to perform analysis of cache misses with small overhead:
 
 ```sh
 sudo perf stat -e cache-references,cache-misses ./main.o
