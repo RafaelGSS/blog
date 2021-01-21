@@ -230,7 +230,7 @@ For CPUs, the tools method can involve checking the following:
 
 In the last section, we brought up CPU Cache. Consider the following example:
 
-> _"An application are performing bad, and based in the monitoring report, is performing a CPU Intensive workload_"
+> _"An application is performing bad. Monitoring is telling us that has a CPU Intensive workload_"
 
 ```c
 #include <stdlib.h>
