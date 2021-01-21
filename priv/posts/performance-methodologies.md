@@ -33,7 +33,7 @@ It also adds more components to your list of dependencies. Therefore, you should
 Each part of the architecture (or software) needs individual monitoring that helps us go back in time and answer some of these questions:
 
 - When did the software start performing worse?
-- During what timing window are we seeing most access/traffic?
+- During what timeframe are we seeing most activity?
 - How our devices are working on a specific date? Like I/O latency, DNS resolution
 
 These questions will help to choose the right performance methodology to apply.
