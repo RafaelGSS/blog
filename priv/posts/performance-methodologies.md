@@ -283,7 +283,7 @@ To this performance issue, I would perform the _Scientific Method_ approach:
 
 1. Question. Why this application are performing poorly?
 2. Hypothesis. The ticket shows that application are spending time in CPU intensive operations. The source code tell us that it could has high CPU Cache miss.
-3. Prediction. Improve the spatial locality through vector access will get better cache hit.
+3. Prediction. Improve the spatial locality through vector access will yield a higher cache hit ratio.
 4. Testing. Use `cachegrind` or `perf` to calculate cache hit miss.
 5. Analysis
 
