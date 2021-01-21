@@ -12,8 +12,7 @@ Most applications tend to focus on correctness over performance. The shift towar
 When that happens, one rarely has time to dedicated towards improving it. This article aims to show you that **there is no simple answer**.
 A lot of performance work should be done in early phases of development. For the rest of the article, the reader is considered having a role of Performance Engineer or "acting" as one.
 
-The reality is that some companies devotees of "agile" methodology, adopt the same order to every software development process: Idea -> MVP -> Feature -> "Refactor". One only needs some time in this methodology to understand that it's not quite like that.
-The result is that, somewhere near the end of the project, performance issues appear.
+In my experience, a strictly "agile" methodology (Idea -> MVP -> Feature -> "Refactor") tends to leave out proper performance engineering, since performance is not a goal but an expectation.
 
 > _Performance is a field where the more you know, the less you understand_.
 
