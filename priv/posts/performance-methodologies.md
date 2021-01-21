@@ -228,7 +228,7 @@ For CPUs, the tools method can involve checking the following:
 
 ## Performance Issue Example
 
-The last section, CPU Cache was mentioned. Take a look in the following example:
+In the last section, we brought up CPU Cache. Consider the following example:
 
 > _"An application are performing bad, and based in the monitoring report, is performing a CPU Intensive workload_"
 
