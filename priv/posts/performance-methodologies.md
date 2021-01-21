@@ -6,8 +6,7 @@ tags: performance,article,en-US
 
 # Performance Methodologies
 
-Poor performance costs the software industry millions of dollars annually in lost revenue, decreased productivity, increased development and hardware costs, and damaged customer
-relations.
+Poor performance costs the software industry millions of dollars annually in lost revenue, decreased productivity, increased development, hardware costs and damaged customer relations.
 
 Most applications tend to focus on correctness over performance. The shift towards performance only occurs once it becomes a problem.
 Once it becomes problem, one rarely has time to dedicate towards improving it. This article aims to show you that **there is no magic solution**.
