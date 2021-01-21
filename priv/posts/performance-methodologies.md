@@ -312,7 +312,7 @@ sudo perf stat -e cache-references,cache-misses ./main.o
        0,083826000 seconds sys
 ```
 
-10% of cache misses is a great point of improvement. This code are performing a bad spartial locality.
+10% of cache misses is a great point of improvement. This code is performing a bad spatial locality.
 
 **The order of for loop matters!** Switch the `for-j` to `for-k` will improve the cache hit.
 
