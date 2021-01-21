@@ -16,7 +16,7 @@ In my experience, a strictly "agile" methodology (Idea -> MVP -> Feature -> "Ref
 
 > _Performance is a field where the more you know, the less you understand_.
 
-Regardless of the source, when a performance issue appears it should be fixed immediately and there are few ways: fix the problem in the source (or at least understand it) or spending money on hardware resources. The second path in some time will lead to the same problem.
+Regardless of the source, when a performance issue appears it should be fixed immediately. Two ways are: 1) modifying code/architecture or throwing money at additional hardware resources. The second path in some time will lead to the same problem down the line.
 
 Prior starting performance analysis, you **must**  understand your application architecture. Any analysis requires clear boundaries and a full understanding of dependencies and third-party services.
 
