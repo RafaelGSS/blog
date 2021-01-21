@@ -346,7 +346,7 @@ sudo perf stat -e cache-references,cache-misses ./main.o
 
 Almost **17x faster**!
 
-Of course, this is a sample. In real-world issues, there are several variables to consider and is normal when a scientific method doesn't give an immediate result, but only through attempts, it gives better visibility and improves the application.
+This is obviously for demonstration purposes only. In real-world issues there are several variables to consider -- it is normal when a scientific method doesn't give an immediate result. Only through different attempts you will increase visibility and improve the application.
 
 ## Acknowledgement
 
