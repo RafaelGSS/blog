@@ -34,7 +34,7 @@ Each part of the architecture (or software) needs individual monitoring that hel
 
 - When did the software start performing worse?
 - During what timeframe are we seeing most activity?
-- How our devices are working on a specific date? Like I/O latency, DNS resolution
+- How are components behaving during these timeframes? Think: I/O latency, DNS resolution, CPU or RAM consumption
 
 These questions will help to choose the right performance methodology to apply.
 
