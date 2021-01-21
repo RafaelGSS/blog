@@ -216,7 +216,7 @@ This MMU uses an on-chip TLB to cache address translations. Cache misses are sat
 
 ---
 
-**Tools to CPU analysis**
+**Tools for CPU analysis**
 
 For CPUs, the tools method can involve checking the following: 
 
