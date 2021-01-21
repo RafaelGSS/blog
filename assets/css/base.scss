@@ -131,3 +131,15 @@ pre .js {
     word-break: normal;
     word-wrap: normal;
 }
+
+pre .c {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    margin-bottom: 0;
+    word-break: normal;
+    word-wrap: normal;
+}
