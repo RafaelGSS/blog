@@ -23,7 +23,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Push image to Docker Hub
-      run: docker push rafaelgss/projects
+      run: docker push rafaelgss/projects:blog-latest
 
   deploy:
     needs: build
