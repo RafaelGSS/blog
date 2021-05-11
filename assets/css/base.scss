@@ -55,6 +55,9 @@ p {
 
 h1, h2, h3 {
   font-family: 'Apercu', serif;
+  a {
+    text-decoration: none;
+  }
 }
 
 h1 {
@@ -75,21 +78,10 @@ h3 {
 }
 
 a {
-  text-decoration: none;
   color: #000;
 
   &:hover {
     color: #353535;
-  }
-
-  &:before {
-    content: "{\00a0";
-    color: #a6ceef;
-  }
-
-  &:after {
-    content: "\00a0}";
-    color: #a6ceef;
   }
 }
 
