@@ -7,13 +7,18 @@ main {
   margin: 0 auto;
   padding: 1em;
 
-  ul {
-    padding-left: 1em;
+  ul,ol {
+    padding: 1em 1em 1em 2em;
+    background: #f9f9f9;
 
-    li p {
-      margin: 0;
-      vertical-align: text-top;
-      text-align: left;
+    li {
+      margin: 0.7em;
+      line-height: 1.5em;
+      p {
+        margin: 0;
+        vertical-align: text-top;
+        text-align: left;
+      }
     }
   }
 
