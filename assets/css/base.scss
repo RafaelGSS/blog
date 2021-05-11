@@ -25,13 +25,18 @@
   src: url("/fonts/Apercu-Mono.woff") format("woff"), url("/fonts/Apercu-Mono.ttf")  format("truetype");
 }
 
+@font-face {
+  font-family: 'Verdana';
+  src: url("/fonts/Verdana.woff") format("woff"), url("/fonts/Verdana.ttf")  format("truetype");
+}
+
 html {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Apercu', serif;
+  font-family: 'Verdana', serif;
   font-size: 1em;
   height: 100%;
 }
@@ -46,6 +51,10 @@ p {
   line-height: 1.5em;
   margin: 0.8em 0 0.8em 0;
   text-align: justify;
+}
+
+h1, h2, h3 {
+  font-family: 'Apercu', serif;
 }
 
 h1 {
