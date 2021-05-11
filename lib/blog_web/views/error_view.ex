@@ -14,5 +14,5 @@ defmodule BlogWeb.ErrorView do
     Phoenix.Controller.status_message_from_template(template)
   end
 
-  def title(_conn, _post), do: "404 - Página não encontrada"
+  def title(_conn, _post), do: "404 - Page not found"
 end
