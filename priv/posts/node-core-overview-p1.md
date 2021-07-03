@@ -6,7 +6,7 @@ tags: nodejs,tips,pt-BR
 
 # Node Core: Overview P1
 
-Esse post eh somente para explicar o funcionamento da concorrência no NodeJS, mais especificamente a Libuv
+Esse post é somente para explicar o funcionamento da concorrência no NodeJS, mais especificamente a Libuv
 
 ## Async
 
