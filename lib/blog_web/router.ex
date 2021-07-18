@@ -18,6 +18,7 @@ defmodule BlogWeb.Router do
 
     get "/", PostController, :index
     get "/search", PostController, :search
+    get "/rss", RSSController, :index
     get "/:slug", PostController, :show
   end
 
