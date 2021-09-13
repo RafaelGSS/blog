@@ -20,11 +20,11 @@ Before any performance optimization, we should define clearly our goal and the b
 
 The average human reaction time is around 200 milliseconds following [Human Benchmark](https://humanbenchmark.com/) Project, that's a pretty interesting project, and following the *["Mental chronometry"](https://en.wikipedia.org/wiki/Mental_chronometry):*
 
-![Representation of the stages of processing in a typical reaction time paradigm. (Mental chronometry)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ecd76d2e-ef52-498f-8c35-04cf1dfa098c/Untitled.png)
+![Representation of the stages of processing in a typical reaction time paradigm. (Mental chronometry)](https://res.cloudinary.com/rafaelgss/image/upload/v1631498465/blog/network-performance/mental-chronometry_gphfvj.png)
 
 > *"Human response times on simple reaction time tasks are usually on the order of 200 ms. The processes that occur during this brief time enable the brain to perceive the surrounding environment, identify an object of interest, decide an action in response to the object, and issue a motor command to execute the movement. These processes span the domains of perception and movement, and involve perceptual decision making and motor planning. Many researchers consider the lower limit of a valid response time trial to be somewhere between 100 and 200 ms, which can be considered the bare minimum of time needed for physiological processes such as stimulus perception and for motor responses."*
 
-![Human Reaction time graph by humanbenchmark.com](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b210ed2-a80f-426c-a7d0-12284683639c/Untitled.png)
+![Human Reaction time graph by humanbenchmark.com](https://res.cloudinary.com/rafaelgss/image/upload/v1631498464/blog/network-performance/reaction-time_a7lody.png)
 
 And it's also confirmed by the book HTTP Network Performance - Ilya Grigorik:
 
@@ -36,7 +36,7 @@ In business, it transposes usually to a better conversation rate:
 - Retailer AutoAnything experienced a 12-13% increase in sales after cutting page load time by 50%.
 - Walmart discovered that improving page load time by one second increased conversions by 2%
 
-![User perception in milliseconds](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c514705b-15a7-4766-8f4f-dd13bb52b898/Untitled.png)
+![User perception in milliseconds](https://res.cloudinary.com/rafaelgss/image/upload/v1631498465/blog/network-performance/reaction-summary_jipmf1.png)
 
 ## Common issues
 
@@ -57,7 +57,7 @@ over WiFi, your bandwidth is cut in half, or worse. Your access point has no say
 
 Most of people tends to believe that the reason of delay is often the client bandwidth, in fact, it helps for sure, but as you will see, it's not a determinant factor of improvement. 
 
-![https://www.afasterweb.com/2015/05/17/the-latency-effect/](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/672e6500-fd2e-4e9d-9437-64e2627c872c/Untitled.png)
+![https://www.afasterweb.com/2015/05/17/the-latency-effect/](https://res.cloudinary.com/rafaelgss/image/upload/v1631498464/blog/network-performance/bandwidth-latency_m1ttev.png)
 
 Once the client reaches 5Mbps approximately, they may not see too much improvement in page load time, on other hand, reducing latency will **always** improve the loading time.
 
@@ -65,7 +65,7 @@ This happens because the majority of latency is caused by Three-Way Handshake in
 
 In fact, the vast majority of traffic around the web is still HTTP/1.1, and it means that for every communication between client-server the workflow performs Three-Way Handshake and it introduces a full roundtrip of latency (RTT).
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a2917739-a4c1-4f2d-947d-222325e2bd09/Untitled.png)
+![Roundtrip](https://res.cloudinary.com/rafaelgss/image/upload/v1631498465/blog/network-performance/three-way_dkthsx.png)
 
 A common way to measure the RTT is: 
 
