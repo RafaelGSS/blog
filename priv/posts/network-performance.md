@@ -53,6 +53,10 @@ In the network, there are several cases that can affect the latency:
 your neighbor, who is occupying the same WiFi channel, starts streaming an HD video
 over WiFi, your bandwidth is cut in half, or worse. Your access point has no say in this arrangement, and that is a feature, not a bug! — WiFi 2.4ghz
 
+// TODO: maybe remove the statement above?
+
+// TODO: add other issues
+
 ## Client Bandwidth is not enough!
 
 Most of people tends to believe that the reason of delay is often the client bandwidth, in fact, it helps for sure, but as you will see, it's not a determinant factor of improvement. 
@@ -85,6 +89,7 @@ Obviously, the application monitor is up to the reader to define, it is out of c
 
 > Remember: The best TCP communication optimization is avoid to send unnecessary packages.
 
+// TODO:
 - Domain sharing for fetch resources by browser (limited to 6 connections by domain)
 - Request pipelining
 - Webpage Test recommendation
@@ -102,10 +107,16 @@ Besides the TCP Normal workflow, the are are few adjustments up to do in order t
 
 ## HTTP/2
 
+The HTTP/2 was released in 2015, however, it's difficult to be fully available to all clients as it does not depend entirely on the applications, such as any protocol, both (client and server) must be able to speak the same language.
+
+However, applications are fully capable of communicating with others applications via HTTP/2, and this is **strongly** recommended.
+In this section, I will cover the key improvements of HTTP/2.
+
 // TODO: Differences between HTTP 1 AND 2
 
 ## References
 
-// TODO
+- https://developers.google.com/web/fundamentals/performance/http2?hl=pt-br
+- https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
 
 // TODO: Usecase from [HTTP Network Stuffs](https://www.notion.so/HTTP-Network-Stuffs-de6cb819fd0044729ae6ce0a52f858e3)
