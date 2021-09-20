@@ -43,17 +43,13 @@ In business, it transposes usually to a better conversation rate:
 In the network, there are several cases that can affect the latency:
 
 - The route that your ISP uses to reach the server
+
+![Example ISP route](https://res.cloudinary.com/rafaelgss/image/upload/v1632097391/blog/network-performance/WhatsApp_Image_2021-09-19_at_9.09.19_PM_ynclsu.jpg)
+
 - The distance between the application server and the client
 - The client local network (wi-fi)
 - ... (Longlist)
 
-// TODO: Add an image to above list
-
-> Your 802.11g client and router may be capable of reaching X Mbps, but the moment
-your neighbor, who is occupying the same WiFi channel, starts streaming an HD video
-over WiFi, your bandwidth is cut in half, or worse. Your access point has no say in this arrangement, and that is a feature, not a bug! — WiFi 2.4ghz
-
-// TODO: maybe remove the statement above?
 
 // TODO: add other issues
 
