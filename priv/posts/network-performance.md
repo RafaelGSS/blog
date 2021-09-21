@@ -46,12 +46,14 @@ In the network, there are several cases that can affect the latency:
 
 ![Example ISP route](https://res.cloudinary.com/rafaelgss/image/upload/v1632097391/blog/network-performance/WhatsApp_Image_2021-09-19_at_9.09.19_PM_ynclsu.jpg)
 
+Eventually the ISP does not provide the best path (latency wise) to reach the end server, it's due to several factors and varies depending on ISP.
+In fact, is not uncommon to see gamers angry because of their latency in the game even with a good bandwidth contract.
+
 - The distance between the application server and the client
-- The client local network (wi-fi)
-- ... (Longlist)
 
+![Example distance between server and client](https://res.cloudinary.com/rafaelgss/image/upload/v1632143773/blog/network-performance/Drawing-10.sketchpad_2_g67lqp.png)
 
-// TODO: add other issues
+This information is obvious, however, I've seen a lot of architects ignoring it. When the server is far away from client it needs more hops to reach and consequently latency.
 
 ## Client Bandwidth is not enough!
 
@@ -77,29 +79,34 @@ rtt min/avg/max/mdev = 195.933/197.576/198.423/0.912 ms
 
 Cloudflare or another proxy will hide the real RTT, the result performed by `ping` is only to Cloudflare servers, in those cases, I recommend you to ping directly the webserver IP if available.
 
-## Improve
+## Improve HTTP/1.1 communication
 
 Well, at this point I'll assume that the reader understands what is the impact of performance in applications and has set up their boundaries and goals.
 
 Obviously, the application monitor is up to the reader to define, it is out of context for this article, so make sure that before any optimization you have the proper tools to measure it. 
 
+For web applications, I strongly recommend a tool such as [https://www.webpagetest.org/](https://www.webpagetest.org/) to give insights before any early optimization.
+
 > Remember: The best TCP communication optimization is avoid to send unnecessary packages.
 
-// TODO:
-- Domain sharing for fetch resources by browser (limited to 6 connections by domain)
-- Request pipelining
-- Webpage Test recommendation
+The main browsers nowadays limit HXR requests by domain and commonly the limit is set to 6 connections per domain.
+For HTTP/1.1 this statement is very important since for every resource requested (CSS, JS, Images) uses an connection.
+It means that when the client uses HTTP/1.1 connection they are able only to fetch 6 resources in paralellel.
 
-### Improving HTTP/1.1 communication
+Since the limit of connection is per domain, a well adopted approach is to use domain sharding to serve multiple resources.
+
+However, is important to notice that **for every resource requests a RTT is added on the top**.
 
 Besides the TCP Normal workflow, the are are few adjustments up to do in order to optimize the HTTP/1.1 communication.
 
 - Use Connection Keep-Alive. By default in HTTP/1.1 the connection keep-alive is enabled by default, but if you are using HTTP/1.0 or prior (really!) make sure to enable the keep-alive. The keep-alive was back-ported to HTTP/1.0 and enabled by the header `Connection: Keep-Alive`. TCP Connection reuse is critical to improving performance.
 - Send fewer bits (Sorry JSON API Spec lovers)
-- Increase TCP CWND (Initial Congestion Window) — WHY?
+- Increase TCP CWND (Initial Congestion Window).
 - Use CDN's to locate the bits closer to the client.
 - Upgrade the server kernel to the latest version.
 - Compress transferred data properly.
+
+// TODO: request pipelining
 
 ## HTTP/2
 
@@ -108,11 +115,22 @@ The HTTP/2 was released in 2015, however, it's difficult to be fully available t
 However, applications are fully capable of communicating with others applications via HTTP/2, and this is **strongly** recommended.
 In this section, I will cover the key improvements of HTTP/2.
 
-// TODO: Differences between HTTP 1 AND 2
+![HTTP 2 Binary example](https://res.cloudinary.com/rafaelgss/image/upload/v1632188502/blog/network-performance/binary_framing_layer01_gpvddu.svg)
+
+**Request Multiplexing**:
+HTTP/2 can send multiple requests for data in parallel over a single TCP connection. This support enables a conversation end-to-end without creating several sockets to receive and request resources.
+The workaround to use domain sharding is not needed when using HTTP/2 and later.
+
+**Header compression**:
+Compressing headers reduces the bytes transmitted during a connection.
+For instance, a customer is visiting an website to purchase a gift. On a low bandwidth network, especially one not using header compression, the response time from the server is longer, and the website renders slowly at customer end.
+
+Using HTTP/2 which deploys the HPACK format for header compression, the pages will load faster with better interactive response time. The header needs to be sent only once during the entire connection leading to a significant decrease in the packet header overhead.
 
 ## References
 
 - https://developers.google.com/web/fundamentals/performance/http2?hl=pt-br
 - https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
+- https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b
 
 // TODO: Usecase from [HTTP Network Stuffs](https://www.notion.so/HTTP-Network-Stuffs-de6cb819fd0044729ae6ce0a52f858e3)
