@@ -127,9 +127,16 @@ For instance, a customer is visiting an website to purchase a gift. On a low ban
 
 Using HTTP/2 which deploys the HPACK format for header compression, the pages will load faster with better interactive response time. The header needs to be sent only once during the entire connection leading to a significant decrease in the packet header overhead.
 
+**Binary Frame**:
+The binary framing layer is responsible for all performance enhancements in HTTP/2, setting out the protocol for encapsulation and transfer of messages between the client and the server.
+
+The binary framing layer breaks the communication between the client and server into small chunks and creates an interleaved bidirectional stream of communication. Thanks to the binary framing layer, HTTP/2 uses a single TCP connection that remains open for the duration of the interaction. 
+
+For a further read, check the references link.
+
 ## References
 
-- https://developers.google.com/web/fundamentals/performance/http2?hl=pt-br
+- https://hpbn.co/http2/
 - https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
 - https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b
 
