@@ -134,10 +134,12 @@ The binary framing layer breaks the communication between the client and server 
 
 For a further read, check the references link.
 
+## Additional Considerations
+
+HTTP/3 is the third and upcoming major version, currently under development. However, the HTTP topic would require an specific article about each one of those major versions. This article was created to show fields of improvement at network level and HTTP optimizations is one of the key improvements.
+
 ## References
 
 - https://hpbn.co/http2/
 - https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
 - https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b
-
-// TODO: Usecase from [HTTP Network Stuffs](https://www.notion.so/HTTP-Network-Stuffs-de6cb819fd0044729ae6ce0a52f858e3)
