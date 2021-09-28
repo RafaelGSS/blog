@@ -106,7 +106,19 @@ Besides the TCP Normal workflow, the are are few adjustments up to do in order t
 - Upgrade the server kernel to the latest version.
 - Compress transferred data properly.
 
-// TODO: request pipelining
+### Request Pipelining
+
+As mentioned in the above section the HTTP/1.1 stabilish a persistent connection between requests, said that, a common flow using a single TCP connection is:
+
+![TCP Keep Alive communication](https://res.cloudinary.com/rafaelgss/image/upload/v1632865016/blog/network-performance/Selection_308_ahuokf.png)
+
+Each HTTP request over the TCP connection must be responded to before the next request can be made. The _request pipelining_ allows multiple HTTP request over the same TCP connection without waiting the previous request increasing the throughput considerabily.
+
+![TCP Request Pipelining](https://res.cloudinary.com/rafaelgss/image/upload/v1632868787/blog/network-performance/Selection_315_kxmh5k.png).
+
+> Pipelining is the process to send successive requests, over the same persistent connection, without waiting for the answer.
+
+// TODO: explain how complex is it
 
 ## HTTP/2
 
