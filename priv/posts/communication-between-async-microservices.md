@@ -120,12 +120,11 @@ Imagine that we have 3 queues:
 
 * critical.logs — To deal with some business rule on critical errors.
 
-* logs — Responsável por salvar qualquer tipo de log, então seu bind será log.*. O asteristico(*) indica que pode ser substituído por **uma** palavra qualquer.
 * logs - Responsible for saving any type of log, so your bind will be `log.*`. The asterisk (*) indicates that it can be replaced by **any** word.
-> Há também o *#* para bind, que pode ser substituído por zero ou mais palavras.
+
 > There is also *#*, which can be replaced by zero or more words
 
-Here is an example of **two** consumers(right corner) and **one** producer(left corner), where `consumer1.js`` (top right) will only wait for **#.critical.#** events and `consumer2.js`(bottom right) will wait for **all** events.
+Here is an example of **two** consumers(right corner) and **one** producer(left corner), where `consumer1.js` (top right) will only wait for **#.critical.#** events and `consumer2.js`(bottom right) will wait for **all** events.
 
 ![example of topics pattern working](https://cdn-images-1.medium.com/max/2684/1*-3jEu2yZqoT03S1AUmgOHg.gif)
 
