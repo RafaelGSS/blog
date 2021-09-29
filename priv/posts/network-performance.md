@@ -159,6 +159,5 @@ HTTP/3 is the third and upcoming major version, currently under development. How
 ## References
 
 - https://hpbn.co/http2/
-- https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
-- https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x
+- [High Performance Browser Networking](https://www.goodreads.com/book/show/17985198-high-performance-browser-networking)
+- [Mozilla Connection Management](https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x)
