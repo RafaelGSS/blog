@@ -118,7 +118,13 @@ Each HTTP request over the TCP connection must be responded to before the next r
 
 > Pipelining is the process to send successive requests, over the same persistent connection, without waiting for the answer.
 
-// TODO: explain how complex is it
+**Pipelining requests looks a wonderful feature, but why does no client enable this by default?**.
+
+Teorically, pipelining looks awesome, but in the practice 90% of the cases is too much complexity handled for a _"little"_ improvement.
+
+HTTP clients should not pipeline requests that have side effects (such as POSTs). In general, on error, pipelining prevents clients from knowing which of a series of pipelined requests were executed by the server. Because nonidempotent requests such as POSTs cannot safely be retried, you run the risk of some methods never being executed in error conditions.
+
+HTTP Pipelining may also increase drastically the chances of [HOL](https://en.wikipedia.org/wiki/Head-of-line_blocking) problem. That said, before implement it, make sure of all the risks of pipelining requests.
 
 ## HTTP/2
 
@@ -155,3 +161,4 @@ HTTP/3 is the third and upcoming major version, currently under development. How
 - https://hpbn.co/http2/
 - https://www.goodreads.com/book/show/17985198-high-performance-browser-networking
 - https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x
