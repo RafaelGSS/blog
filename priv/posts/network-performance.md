@@ -156,6 +156,10 @@ For a further read, check the references link.
 
 HTTP/3 is the third and upcoming major version, currently under development. However, the HTTP topic would require an specific article about each one of those major versions. This article was created to show fields of improvement at network level and HTTP optimizations is one of the key improvements.
 
+## Acknowledgement
+
+[Zekth](https://github.com/zekth) & [gabriellamas](https://github.com/gabriellamas) for reviewing it.
+
 ## References
 
 - https://hpbn.co/http2/
