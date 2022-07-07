@@ -10,7 +10,7 @@ jobs:
   merge_schedule:
     runs-on: ubuntu-latest
     steps:
-      - uses: gr2m/merge-schedule-action@v1.x
+      - uses: gr2m/merge-schedule-action@v2
         with:
           time_zone: 'America/Sao_Paulo'
           require_statuses_success: 'true'
