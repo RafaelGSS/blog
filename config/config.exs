@@ -5,10 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
-
-config :blog,
-  ecto_repos: [Blog.Repo]
+import Config
 
 # Configures the endpoint
 config :blog, BlogWeb.Endpoint,

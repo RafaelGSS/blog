@@ -93,7 +93,7 @@ Validar os parâmetros da requisição e ainda documentar parece bom né?!
 
 O Fastify por padrão faz uso do [Ajv](https://github.com/epoberezkin/ajv) para validação de parâmetros, e junto ao plugin [fastify-swagger](https://github.com/fastify/fastify-swagger) você documenta enquanto valida os dados.
 
-<iframe src="https://medium.com/media/623d47fcd337825013d008952fdd8079" frameborder=0></iframe>
+![](https://res.cloudinary.com/rafaelgss/image/upload/v1657392914/blog/fastify/giphy_ak1hii.gif)
 
 Vamos fazer uma API com validação/documentação como exemplo.
 Primeiro vamos instalar nossas dependências:
@@ -104,7 +104,7 @@ npm i -S fastify-swagger
 
 E então:
 
-<iframe src="https://medium.com/media/aea8e965500546aecfed89074f112c80" frameborder=0></iframe>
+<script src="https://gist.github.com/RafaelGSS/ca3b91e54cf653afc8ff0e309094c30d.js"></script>
 
 Esse snippet é simples, somente para mostrar a funcionalidade dos plugins do fastify e sua validação padrão com Ajv (Lembrando, você pode usar o schema compiler que você quiser, [Joi](https://github.com/hapijs/joi) é um bom exemplo disso). Então, vamos a descrição da linha mais importante:
 
@@ -155,7 +155,7 @@ curl -i -H "Accept: application/json" \
 
 Pronto! Schema validado e documentado!
 
-![](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
+![gif](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
 
 ## Considerações finais
 
