@@ -84,7 +84,14 @@ import { ProxyAgent } from 'undici'
 const proxyUrl = 'http://localhost:8000' // default address for HTTPToolkit
 const dispatcher = new ProxyAgent({ uri: proxyUrl })
 
-await fetch("https://example.com", { dispatcher })
+await fetch("https://example.com", {
+  dispatcher,
+  method: 'POST',
+  body: JSON.stringify({
+    user: 'rafaelgss',
+    password: 'mysecurepassword'
+  })
+})
 ```
 
 Run it with:
@@ -94,11 +101,17 @@ $ node undici-mitm.mjs
 
 It will work like a charm, you'll be able to intercept and visualize the request in the HTTPToolkit if you want
 
-// HTTPToolkit image
+![HTTPToolkit Example request](https://res.cloudinary.com/rafaelgss/image/upload/v1657372957/blog/http-tunnel/Selection_566_wt32yr.png)
 
-Great, right? **Wrong**!
+Everything is good, right? **Wrong**!
 
-// TODO Wireshark image
+Using the following query on wireshark will show that even requesting an TLS Endpoint, you are leaking everything in your local network
+
+```
+http.host contains example.com
+```
+
+![Wireshark leak example](https://res.cloudinary.com/rafaelgss/image/upload/v1657375228/blog/http-tunnel/Selection_567_lopkmz.png)
 
 For this reason, HTTP Tunneling is a great approach to use when building a Proxy Client.
 
