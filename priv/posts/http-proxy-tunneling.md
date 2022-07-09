@@ -38,6 +38,9 @@ http.get({
 
 Well… This likely will work. But, this is totally **unsafe** and in this blog post, I’ll show you why.
 
+This is a longer explanation of a security issue on `undici`([GHSA-pgw7-wx7w-2w33](https://github.com/nodejs/undici/security/advisories/GHSA-pgw7-wx7w-2w33)).
+It was fixed in `undici@5.5.1`.
+
 ### Firstly, what is an HTTP Proxy, and why would someone use it?
 
 A Proxy is a gateway (intermediary) between the client (you) and the requested server. If you are using an HTTP Proxy, all the HTTP Traffic flows through the proxy to the requested endpoint.
@@ -68,13 +71,50 @@ The first one is basically what the snippet does, and when you are using an HTTP
 ![Proxy HTTPS example](https://res.cloudinary.com/rafaelgss/image/upload/v1657154319/blog/http-tunnel/image4_cbbi4c.png)
 
 Nevertheless, when the proxy server is available in a non-tls connection, it means that **all of your data is exposed** in the network. It’s not uncommon to see local proxies using HTTP without a TLS connection.
-Actually, a vast piece of developers that uses Proxy to debug/intercept requests rely on an HTTP Local Proxy
+Actually, a vast piece of developers that uses an HTTP Proxy to debug/intercept requests rely on an HTTP Local Proxy
 
 ![Proxy mitm attack example](https://res.cloudinary.com/rafaelgss/image/upload/v1657154318/blog/http-tunnel/image2_q0xfdv.png)
 
 As described by the above image, even though the requested endpoint uses TLS, the request is sent to the Proxy using HTTP, which means that anybody in your **local network** can intercept and read packages. In case you are using Public Wi-Fi… I’d say you are at serious risk.
-For this reason, HTTP Tunneling is a great approach to use when building a Proxy Client.
 
+For scientific reasons, you can use [Wireshark](https://www.wireshark.org/) to sniff the local network while performing an HTTPS Request using the `ProxyAgent` from `undici@5.5.0`:
+
+```js
+# undici-mitm.mjs
+import { ProxyAgent } from 'undici'
+const proxyUrl = 'http://localhost:8000' // default address for HTTPToolkit
+const dispatcher = new ProxyAgent({ uri: proxyUrl })
+
+await fetch("https://example.com", {
+  dispatcher,
+  method: 'POST',
+  body: JSON.stringify({
+    user: 'rafaelgss',
+    password: 'mysecurepassword'
+  })
+})
+```
+
+Run it with:
+```console
+$ node undici-mitm.mjs
+```
+
+It will work like a charm, you'll be able to intercept and visualize the request in the HTTPToolkit if you want
+
+![HTTPToolkit Example request](https://res.cloudinary.com/rafaelgss/image/upload/v1657372957/blog/http-tunnel/Selection_566_wt32yr.png)
+
+Everything is good, right? **Wrong**!
+
+Using the following query on wireshark will show that even requesting an TLS Endpoint, you are leaking everything in your local network
+
+```
+http.host contains example.com
+```
+
+![Wireshark leak example](https://res.cloudinary.com/rafaelgss/image/upload/v1657375228/blog/http-tunnel/Selection_567_lopkmz.png)
+
+For this reason, HTTP Tunneling is a great approach to use when building an HTTP Proxy Client.
 
 ### HTTP Proxy Tunneling
 
