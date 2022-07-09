@@ -159,7 +159,7 @@ curl -i -H "Accept: application/json" \
 
 Excellent, schema validated and documented!
 
-![](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
+![gif](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
 
 ## Final considerations
 

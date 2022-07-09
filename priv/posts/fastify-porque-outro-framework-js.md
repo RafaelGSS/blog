@@ -155,7 +155,7 @@ curl -i -H "Accept: application/json" \
 
 Pronto! Schema validado e documentado!
 
-![](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
+![gif](https://cdn-images-1.medium.com/max/2000/1*LXYBULSDZT9a-aNpxQf1Sg.gif)
 
 ## Considerações finais
 
