@@ -92,7 +92,7 @@ Validate the request parameters and document it at same time is a nice world, ri
 
 By default Fastify makes use of [Ajv](https://github.com/epoberezkin/ajv) for parameter validation and alongside the plugin [fastify-swagger](https://github.com/fastify/fastify-swagger) you document while validating the data.
 
-<iframe src="https://medium.com/media/623d47fcd337825013d008952fdd8079" frameborder=0></iframe>
+![](https://res.cloudinary.com/rafaelgss/image/upload/v1657392914/blog/fastify/giphy_ak1hii.gif)
 
 Let's do an API with validation/documentation as example.
 First, we'll install our dependencies:
@@ -103,7 +103,7 @@ npm i -S fastify-swagger
 
 And so:
 
-<iframe src="https://medium.com/media/aea8e965500546aecfed89074f112c80" frameborder=0></iframe>
+<script src="https://gist.github.com/RafaelGSS/ca3b91e54cf653afc8ff0e309094c30d.js"></script>
 
 This is an easy example just to show the plugins feature of Fastify and it's standard validation with `Ajv` (you can use the schema compiler that you want, [Joi](https://github.com/hapijs/joi) is a good one). So, let's go to the most important line:
 
