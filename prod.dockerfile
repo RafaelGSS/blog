@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir-phoenix:latest
+FROM bitwalker/alpine-elixir-phoenix:1.13.1
 
 # Set exposed ports
 EXPOSE 4000
@@ -14,7 +14,7 @@ RUN mix do deps.get, deps.compile
 # Same with npm deps
 ADD assets/package.json assets/
 RUN cd assets && \
-    npm install
+    npm install --legacy-peer
 
 ADD . .
 
