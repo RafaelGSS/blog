@@ -9,6 +9,7 @@ defmodule Blog.Application do
     # List all child processes to be supervised
     children = [
       { Blog.Posts.PostsManager, Blog.Posts.PostsManager.initialize() },
+      {Phoenix.PubSub, name: Blog.PubSub},
       # Start the endpoint when the application starts
       BlogWeb.Endpoint
       # Starts a worker by calling: Blog.Worker.start_link(arg)
