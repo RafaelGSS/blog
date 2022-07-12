@@ -1,28 +1,21 @@
 FROM bitwalker/alpine-elixir-phoenix:1.13.1
 
+# Initial setup
 # Set exposed ports
 EXPOSE 4000
 ENV PORT=4000 \
     MIX_ENV=prod \
-    SECRET_KEY_BASE=${SECRET_KEY_BASE} \
-    DATABASE_URL=${DATABASE_URL}
+    SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
 # Cache elixir deps
 ADD mix.exs mix.lock ./
-RUN mix do deps.get, deps.compile
+RUN mix do deps.get --only prod
+RUN mix compile
 
 # Same with npm deps
-ADD assets/package.json assets/
-RUN cd assets && \
-    npm install --legacy-peer
+RUN mix assets.deploy
 
 ADD . .
-
-# Run frontend build, compile, and digest assets
-RUN cd assets/ && \
-    npm run deploy && \
-    cd - && \
-    mix do compile, phx.digest
 
 USER root
 

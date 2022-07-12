@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= title(assigns) %></title>
     <link rel="alternate" type="application/rss+xml" title="RafaelGSS Blog" href="/rss">
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156375977-1"></script>
     <meta name="aplication-name" content="Rafael Gonzaga Blog">
@@ -33,7 +33,7 @@
             <a target="_blank" href="https://rafaelgss.github.io/portfolio/">Contact</a>
           </li>
           <li>
-            <a href="<%= Routes.post_path @conn, :index %>">Publications</a>
+            <a href={Routes.post_path @conn, :index}>Publications</a>
           </li>
         </ul>
       </header>
@@ -44,6 +44,6 @@
         <span>© Rafael Gonzaga, Brasil - SP</span>
       </footer>
     </div>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </body>
 </html>
