@@ -47,5 +47,5 @@ jobs:
           docker pull rafaelgss/projects:blog-latest
           docker kill blog_prod || true
           docker rm blog_prod || true
-          docker run -d -p 4000:4000 --name blog_prod -e VIRTUAL_HOST="$VIRTUAL_HOST" -e SECRET_KEY_BASE="$SECRET_KEY_BASE" -e DATABASE_URL="$DATABASE_URL" -t rafaelgss/projects:blog-latest
+          docker run -d -p 4000:4000 --name blog_prod -e VIRTUAL_HOST="$VIRTUAL_HOST" -e SECRET_KEY_BASE="$SECRET_KEY_BASE" -e PHX_SERVER="true" -t rafaelgss/projects:blog-latest
 
