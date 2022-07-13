@@ -13,7 +13,7 @@ defmodule Blog.Posts.PostsManager do
   end
 
   defp get_posts do
-    File.ls!("priv/posts")
+    File.ls!("#{:code.priv_dir(:blog)}/posts")
     |> Enum.map(&Post.compile/1)
     |> Enum.sort(&sort_post_by_date/2)
   end
