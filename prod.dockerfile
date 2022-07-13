@@ -50,7 +50,7 @@ FROM alpine:3.14.2 AS app
 ARG MIX_ENV
 
 # install runtime dependencies
-RUN apk add --no-cache libstdc++ openssl ncurses-libs
+RUN apk add --no-cache libstdc++ openssl ncurses-libs curl
 
 ENV USER="elixir"
 
