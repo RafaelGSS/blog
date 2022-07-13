@@ -18,7 +18,7 @@ defmodule BlogWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: "priv/static",
+    from: :blog,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
