@@ -8,7 +8,7 @@ defmodule Blog.Posts.Post do
       slug: file_to_slug(file)
     }
 
-    Path.join(["priv/posts", file])
+    Path.join(["#{:code.priv_dir(:blog)}/posts", file])
     |> File.read!
     |> split
     |> extract(post)
