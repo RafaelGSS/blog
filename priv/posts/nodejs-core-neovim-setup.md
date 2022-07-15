@@ -19,10 +19,12 @@ These are the pre-requisites:
 
 > _In case you are looking for a Neovim configuration, you can use [mine](https://github.com/RafaelGSS/dotfiles). _
 
+// TODO: example what's coc-settings
+
 ### Creating coc-settings.json
 
-Once you have coc.nvim installed, you should be able to run `:CoCConfig` to open the coc-settings.json.
-Add the following languageserver option into your file
+Once you have `coc.nvim` installed, you should be able to run `:CoCConfig` to open the `coc-settings.json`.
+Add the following _languageserver_ option into your file
 
 ```json
 {
@@ -67,15 +69,18 @@ Add the following languageserver option into your file
 }
 ```
 
-This file will enable the ccls LSP(Language Service Provider) under Node.js C++ Files. Notice inside _rootPatterns _contains_ compile_commands.json_,
+This file will enable the `ccls` [LSP(Language Service Provider)](https://microsoft.github.io/language-server-protocol/)
+under Node.js C++ Files. Note that inside _rootPatterns_ contains `compile_commands.json`,
 this is the file that will be generated in the next step.
 
 ### Generating Node.js maps
 
-Building Node.js for the first time is not fast. I strongly suggest using:
+Building Node.js for the first time is not an fast operation. Personally, I suggest use:
 
-* [Ninja builds](https://github.com/nodejs/node/blob/main/doc/contributing/building-node-with-ninja.md)
+* [Ninja builds](https://github.com/nodejs/node/blob/main/doc/contributing/building-node-with-ninja.md) and
 * [ccache](https://github.com/nodejs/node/blob/main/BUILDING.md#speeding-up-frequent-rebuilds-when-developing)
+
+To reduce the build time.
 
 The LSP needs a file that indicates all the includes and references each file has in order to provide actions such as go-to-definition, and go-to-implementation
 
