@@ -7,9 +7,10 @@ tags: vim,nodejs,tips,en-US
 # Node.js Core - Neovim setup
 
 Frequently, I'm asked about my setup when working on the Node.js codebase.
-To save everyone time, I wrote this quick blog post.  It's important to mention
-all recommendations are personal preferences, you can achieve the same behavior
-using different tools.
+To save everyone's time, I wrote this quick blog post.
+
+It's important to mention all recommendations are personal preferences,
+you can achieve the same behaviour using different tools.
 
 Currently, I'm a [Linux Mint](https://linuxmint.com/) user, but likely this
 tutorial will work for any Unix-based system. These are the pre-requisites:
