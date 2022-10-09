@@ -21,7 +21,7 @@ tutorial will work for any Unix-based system. These are the pre-requisites:
 
 > _In case you are looking for a Neovim configuration, you can use [mine](https://github.com/RafaelGSS/dotfiles)._
 
-### Enabling ccls LSP
+## Enabling ccls LSP
 
 Once you have `coc.nvim` installed, you should be able to run `:CoCConfig` to
 open the `coc-settings.json`.
@@ -62,7 +62,7 @@ This configuration will enable the `ccls` [LSP(Language Service Provider)](https
 over Node.js C++ Files. Note that _rootPatterns_ array contains `compile_commands.json`.
 This is the **compilation database** the that will be generated in the next step.
 
-### Generating Node.js Compilation Database
+## Generating Node.js Compilation Database
 
 Building Node.js for the first time is not a fast operation. Personally, I suggest using:
 
@@ -95,9 +95,9 @@ Node.js root folder
 ln -s ./out/Release/compile_commands.json .
 ```
 
-After it, restart your nvim and see the magic happening.
+After that, restart your `nvim` and watch the magic happen.
 
-### The first CCLS Run may take a while
+## The first CCLS Run may take a while
 
 Don’t worry if your machine starts to work heavy on the `ccls`.
 Dashboards similar to the below image are expected:
@@ -106,7 +106,7 @@ Dashboards similar to the below image are expected:
 
 _That’s just the price you pay for a simple go-to._
 
-### References
+## References
 
 * [Joyee](https://joyeecheung.github.io/blog/about/) wrote [this blog](https://joyeecheung.github.io/blog/2018/12/31/tips-and-tricks-node-core)
 post in 2018. This is still a good reference.
