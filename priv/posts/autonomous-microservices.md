@@ -54,7 +54,6 @@ Remember: One of the main concepts of microservices is the resilience, so if you
 
 ## CAP Theorem
 
-Este Teorema afirma que é impossível que o armazenamento de dados distribuídos forneça simultaneamente mais de duas das três garantias seguintes:
 This Theorem states that is impossible for the distrubuited data storage provide simultaneously more than two of the following three guarantees:
 
 - Consistency
