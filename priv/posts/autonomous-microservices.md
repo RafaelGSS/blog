@@ -78,9 +78,6 @@ To deal with modern distributed systems, **the partition tolerance is not an opt
 
 ## Choosing
 
-**Consistência + Disponibilidade:** Comumente utilizado em sistemas que necessitam de forte consistência e alta disponibilidade, chamados também de abordagem
-Otimista, pois partem do pressuposto que as escritas NUNCA falham.
-
 **Consistency + Availability:** Usually used in systems that needs a strong consistency and high availability, also called an optimistic approach,  since they assume that the writing NEVER fails.
 
 **Consistency + Partition Fault-tolerant:** Systems that opt for this strategy, need to give up of availability. There is a word, quite important in this context, called: Consciousness. In CP type systems, if there is a written partitioning - as mentioned earlier, it can be rejected/denied.
