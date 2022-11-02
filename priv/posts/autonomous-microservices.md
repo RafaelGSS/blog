@@ -92,7 +92,6 @@ The Youtube needs lie to to their users, and I'll explain the reason. When we de
 - Let a single server processing the requests of getting the data -- And this server will be the bottleneck. 
 - Keep more than one data server, doing the data eventually be consolidated between all servers. -- Winner.
 
-É por isso que se duas pessoas entrarem em um vídeo em alta ao mesmo tempo irão ver visualizações com números distintos (claro, se cairem em nós distintos).
 This the reason that if two people join in a top/hot video at the same time will be the visualization count with different numbers (of course, if they were passed by differents server through the load balancer).
 
 > _"How to deal with eventual consistency? If I need of latest data?"_
