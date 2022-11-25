@@ -37,14 +37,21 @@ mouse during the benchmark *may* influence the result — You would be surprised
 
 For sake of clarity, let’s use the following analogy: You are a soccer coach and you need to hire one of both players:
 
-![Untitled](https://res.cloudinary.com/rafaelgss/image/upload/v1669300542/preparing-and-evaluating-benchmarks/Untitled_vftlb6.png)
 
-![Untitled](https://res.cloudinary.com/rafaelgss/image/upload/v1669300537/preparing-and-evaluating-benchmarks/Untitled_itewmq.png)
+<table>
+  <tr>
+    <td style="padding: 5px">
+      <img src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300542/preparing-and-evaluating-benchmarks/Untitled_vftlb6.png"/>
+      <p style="text-align: center">1) Player A who kicked all the balls to the same wrong location</p>
+    </td>
+    <td style="border-left: 1px #ccc solid; padding: 5px">
+      <img src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300537/preparing-and-evaluating-benchmarks/Untitled_itewmq.png"/>
+      <p style="text-align: center">2) Player B who shot randomly but eventually makes the goal</p>
+    </td>
+  </tr>
+</table>
 
-1. Player A who kicked all the balls to the same wrong location
-2. Player B who shot randomly but eventually makes the goal
-
-The answer is very simple, **Player A**. Because, you just need to teach “A” to kick to the left. 
+The answer is very simple, **Player A**. Because, you just need to teach “A” to kick to the left.
 
 > 💡 Reducing variability is essential to get reliable results.
 
