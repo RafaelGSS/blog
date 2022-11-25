@@ -33,7 +33,7 @@ Let's create a Dockerfile to perform the build on pipeline.
 
 > In the project I've a Dockerfile for development and one for production (prod.dockerfile), and in this article I'll show the `prod.dockerfile`
 
-to summarize the Dockerfile, we've the following commands:
+To summarize the Dockerfile, we've the following commands:
 
 ```sh
 ENV PORT=4000 \
@@ -51,10 +51,10 @@ Which we pass an sensible environment variable to build the Dockerfile (SECRET_K
 So, in brief summary we need that: _When perform a push to **master** we build the new image and send it to our repository at **DockerHub**.
 After that, we should enter on _droplet_ and move the container up on the expected port by nginx (4000)_.
 
-Some relevants information to consider:
+Important points to consider:
 
 1. We should send in some security way the credentials to access the database and the secret_key of Phoenix.
-2. To perform the push to repository we must realize the login on docker. 
+2. To perform the push to repository we must realize the login on docker.
 
 Therefore, let's create our file `actions` into `.github/workflows/actions.yml` and add the follow command:
 
@@ -104,24 +104,20 @@ Let's continue with our steps...
       run: docker push rafaelgss/projects
 ```
 
-Bem... adicionamos uma sequência interessante de steps agora, sendo elas:
-Well... we add a interesting sequency of steps now, which is:
-
-1. Build da imagem de produção (_prod.dockerfile_) com a tag.
-2. Login no DockerHub
-3. Push da imagem para o DockerHub
+Well... We've added an interesting sequence of steps now, which are:
 
 1. Production build image (_prod.dockerfile_) with the tag.
 2. Login on DockerHub
 3. Image push to DockerHub
 
-Note that in step 2 we use `${{ secrets.* }}`, These are the secrets defined in the project in question, that's where
-that we will store all sensitive information in a "safe" way.
+Note that in step 2 we use `${{ secrets.* }}`. These are the secrets defined in the project, that's where
+we will store all sensitive information in a safe way.
 
 ![Exemple of Secrets in Github](/images/secrets-example-github.png)
 
-Well, we were able to build and send the iamge to the DockerHub... Now, let's go to the main step, the **deploy**!
-First one, create a new job and call it `Deploy` and set it to run after the _BUILD_.
+Well, we were able to build and send the image to the _DockerHub_... Now, let's go to the main step, the deployment.
+
+First, create a new job, call it `Deploy`, and set it to run after the _BUILD_.
 
 ```sh
   deploy:
@@ -130,7 +126,7 @@ First one, create a new job and call it `Deploy` and set it to run after the _BU
     runs-on: ubuntu-latest
 ```
 
-And so, create our steps:
+And then, create our steps:
 ```sh
     steps:
 
@@ -153,7 +149,7 @@ And so, create our steps:
           docker run -d -p 4000:4000 --name blog_prod -e VIRTUAL_HOST="$VIRTUAL_HOST" -e SECRET_KEY_BASE="$SECRET_KEY_BASE" -e DATABASE_URL="$DATABASE_URL" -t rafaelgss/projects:blog-latest
 ```
 
-In this single step, we create an ssh connection with our droplet and execute what is in `script` in its sequence.
+In this single step, we create an _ssh connection_ with our droplet and execute what is in the _script_.
 
 1. We performed the image pull made in the previous job.
 2. We kill the container in execution (if any) -- Because of that, there is downtime.

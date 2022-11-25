@@ -6,9 +6,9 @@ tags: performance,nodejs,article,en-US
 
 # Node CPU Profiler
 
-How we can meansure the performance?
+How we can measure the performance?
 
-If you are a software engineer, you have already thought about the performance of your nodejs application.
+If you are a software engineer, you have already thought about the performance of your Node.js application.
 And probably saw the feature flag: `--inspect` or `--inspect-brk` to enable CDT(Chrome Dev Tools) and measure performance from there.
 
 Well, that is nice, but sometimes it is not enough. First of all, following the principles of other great engineers,
