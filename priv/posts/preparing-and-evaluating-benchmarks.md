@@ -178,7 +178,7 @@ While computing a confidence interval, the number of samples *n* (benchmark exec
 
 This article approaches the first group (*n ≥ 30*) — Both groups are covered in detail in the paper
 *Statistically Rigorous Java Performance Evaluation² - section 3.2*.
-The module `[ttest][]` will abstract the confidence calculation. In case you are interested in the equation, see the
+The module [`ttest`][] will abstract the confidence calculation. In case you are interested in the equation, see the
 paper mentioned previously³.
 
 The following snippet is a collection of benchmark results before the change (A) and after the change (B)
@@ -209,7 +209,7 @@ const B = [
 happen, making the mean useless info, so be careful with the mean. Always plot your data into a graph so you can
 understand its behaviour.
 
-Then, the `[ttest][]` module can be used to calculate the significance of the variance
+Then, the [`ttest`][] module can be used to calculate the significance of the variance
 
 ```js
 const ttest = require('ttest')
@@ -304,15 +304,17 @@ Usually, the mean can hide issues, therefore, it is not recommended to rely on a
 
 Really appreciate the ones that reviewed that long article:
 
-- Paula Paul
-- Johan Bergström
+- [Paula Paul](https://twitter.com/paulapaultweets)
+- [Johan Bergström](https://twitter.com/eatingfoodbrb)
 - Craig Milam
-- Matteo Collina
+- [Matteo Collina](https://twitter.com/matteocollina)
+
+and obviously, [Nearform][] for sponsoring me to perform those studies.
 
 ## References
 
 - [*System Performance - Enterprise and Cloud*](https://www.goodreads.com/book/show/53435218-systems-performance)
-- [*Measuring and Understanding Variation in Benchmark Performance](https://ipm-hpc.sourceforge.net/docs/Wright_PerformanceVariation.pdf) [Paper]*
+- *[Measuring and Understanding Variation in Benchmark Performance](https://ipm-hpc.sourceforge.net/docs/Wright_PerformanceVariation.pdf) [Paper]*
 - [*Performance Matters - Emery Berger - CppCon 2020*](https://www.youtube.com/watch?v=pTmLQvMM-1M)
 - *[1] [Rigorous Benchmarking in Reasonable Time](https://kar.kent.ac.uk/33611/45/p63-kaliber.pdf) [Paper]*
 - *[2] [Statistically Rigorous Java Performance Evaluation](https://dri.es/files/oopsla07-georges.pdf) [Paper]*
@@ -322,9 +324,10 @@ Really appreciate the ones that reviewed that long article:
 [turbopack vs vite discussion]: https://github.com/yyx990803/vite-vs-next-turbo-hmr/discussions/8
 [Brendan Gregg]: https://www.brendangregg.com/
 [Brendan Gregg video]: https://www.youtube.com/watch?v=tDacjrSCeq4&ab_channel=BryanCantrill
-[`t-test`]: https://en.wikipedia.org/wiki/Student%27s_t-test
+[t-test]: https://en.wikipedia.org/wiki/Student%27s_t-test
 [statistically significant]: https://en.wikipedia.org/wiki/Statistical_significance
 [Node.js core benchmarking suite]: https://github.com/nodejs/node/tree/main/benchmark
 [`autocannon-compare`]: https://github.com/mcollina/autocannon-compare
-[ttest]: https://www.npmjs.com/package/ttest
+[`ttest`]: https://www.npmjs.com/package/ttest
 [nodejs-bench-operations]: https://github.com/RafaelGSS/nodejs-bench-operations
+[Nearform]: https://www.nearform.com/
