@@ -5,12 +5,10 @@ main {
   color: #333;
   max-width: 45em;
   margin: 0 auto;
-  padding: 1em;
 }
 
 main ul, main ol {
-  padding: 1em 1em 1em 2em;
-  background: #f9f9f9;
+  padding-left: 2em;
 }
 
 main ul li, main ol li {
@@ -26,11 +24,6 @@ main ul li p, main ol li p {
 
 main h3:first-child {
   margin-top: 1em;
-}
-
-.teaser {
-  border-bottom: 1px solid #ddd;
-  padding: 1.5em 0;
 }
 
 .teaser .posts__date {
