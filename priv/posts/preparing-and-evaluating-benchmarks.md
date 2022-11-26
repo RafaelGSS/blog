@@ -41,11 +41,11 @@ For sake of clarity, let’s use the following analogy: You are a soccer coach a
 <table>
   <tr>
     <td style="padding: 5px">
-      <img src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300542/preparing-and-evaluating-benchmarks/Untitled_vftlb6.png"/>
+      <img alt="example all the balls same wrong location" src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300542/preparing-and-evaluating-benchmarks/Untitled_vftlb6.png"/>
       <p style="text-align: center">1) Player A who kicked all the balls to the same wrong location</p>
     </td>
     <td style="border-left: 1px #ccc solid; padding: 5px">
-      <img src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300537/preparing-and-evaluating-benchmarks/Untitled_itewmq.png"/>
+      <img alt="example shot randomly" src="https://res.cloudinary.com/rafaelgss/image/upload/v1669300537/preparing-and-evaluating-benchmarks/Untitled_itewmq.png"/>
       <p style="text-align: center">2) Player B who shot randomly but eventually makes the goal</p>
     </td>
   </tr>
