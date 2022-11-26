@@ -7,6 +7,7 @@
     <title><%= title(assigns) %></title>
     <link rel="alternate" type="application/rss+xml" title="RafaelGSS Blog" href="/rss">
     <link rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <link rel="stylesheet" href={Routes.static_path(@conn, "/assets/prism.css")}/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156375977-1"></script>
     <meta name="aplication-name" content="Rafael Gonzaga Blog">
@@ -27,7 +28,6 @@
         <h1>
           @rafaelgss tech blog
         </h1>
-        <hr>
         <ul>
           <li>
             <a target="_blank" href="https://rafaelgss.github.io/portfolio/">Contact</a>
@@ -45,5 +45,6 @@
       </footer>
     </div>
     <script type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+    <script type="text/javascript" src={Routes.static_path(@conn, "/assets/prism.js")}></script>
   </body>
 </html>

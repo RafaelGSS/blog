@@ -60,9 +60,9 @@ The proxy can be used to intercept, inspect, modify and replay web traffic such 
 
 ## HTTP Proxy client challenges
 
-At the beginning of this article, a snippet was shared with a strong statement:
+At the beginning of this article, a snippet was shared with the following strong statement:
 
-_<span style="text-decoration:underline;">Well… This likely will work. But, this is totally **unsafe** and in this blog post, I’ll show you why.</span>_
+> _"Well… This likely will work. But, this is totally **unsafe** and in this blog post, I’ll show you why."_
 
 It’s time to explain it. There are two possible ways to use a proxy server:
 
@@ -83,7 +83,7 @@ As described by the above image, even though the requested endpoint uses a TLS c
 For scientific reasons, you can use [Wireshark](https://www.wireshark.org/) to sniff the local network while performing an HTTPS Request using the `ProxyAgent` from `undici@5.5.0`:
 
 ```js
-# undici-mitm.mjs
+// undici-mitm.mjs
 import { ProxyAgent } from 'undici'
 const proxyUrl = 'http://localhost:8000' // default address for HTTPToolkit
 const dispatcher = new ProxyAgent({ uri: proxyUrl })
