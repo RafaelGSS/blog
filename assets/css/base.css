@@ -92,42 +92,7 @@ code {
   background-color: #f9f2f4;
   border-radius: 4px;
 }
-/* pre .sh, .console { */
-/*   background: #202124; */
-/*   color: #fff; */
-/*   padding: 10px; */
-/* } */
 
 pre {
   font-size: 90% !important;
 }
-/* pre .js { */
-/*   padding: 16px; */
-/*   overflow: auto; */
-/*   font-size: 85%; */
-/*   line-height: 1.45; */
-/*   background-color: #f6f8fa; */
-/*   border-radius: 3px; */
-/*   margin-bottom: 0; */
-/*   word-break: normal; */
-/*   word-wrap: normal; */
-/* } */
-/* pre .c { */
-/*   padding: 16px; */
-/*   overflow: auto; */
-/*   font-size: 85%; */
-/*   line-height: 1.45; */
-/*   background-color: #f6f8fa; */
-/*   border-radius: 3px; */
-/*   margin-bottom: 0; */
-/*   word-break: normal; */
-/*   word-wrap: normal; */
-/* } */
-
-/* pre .json { */
-/*   padding: 16px; */
-/*   overflow: auto; */
-/*   line-height: 1.45; */
-/*   background-color: #f6f8fa; */
-/*   border-radius: 6px; */
-/* } */
