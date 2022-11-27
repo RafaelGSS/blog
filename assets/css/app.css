@@ -2,6 +2,8 @@
 @import "./layouts.css";
 
 main {
+  padding-left: 16px;
+  padding-right: 16px;
   color: #333;
   max-width: 45em;
   margin: 0 auto;
