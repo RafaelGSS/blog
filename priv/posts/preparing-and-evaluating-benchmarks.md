@@ -306,7 +306,7 @@ Really appreciate the ones that reviewed that long article:
 
 - [Paula Paul](https://twitter.com/paulapaultweets)
 - [Johan Bergström](https://twitter.com/eatingfoodbrb)
-- Craig Milam
+- [Craig Milam](https://twitter.com/texasrocker)
 - [Matteo Collina](https://twitter.com/matteocollina)
 
 and obviously, [Nearform][] for sponsoring me to perform those studies.
