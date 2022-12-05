@@ -35,7 +35,7 @@ apparently, shouting in the data server increases significantly the Disk I/O Lat
 Obviously, background processes are harmful to the benchmark result, even small tasks such as the movement of your
 mouse during the benchmark *may* influence the result — You would be surprised. 
 
-For sake of clarity, let’s use the following analogy: You are a soccer coach and you need to hire one of both players:
+For sake of clarity, let’s use the following analogy: You are a soccer coach and you need to hire one of two players:
 
 
 <table>
@@ -136,7 +136,7 @@ arrow function 5.6122090ms
 
 Now, the ‘regular function’ is the fastest one. The reason is due to the V8 engine optimizing and de-optimizing function calls, all in the same environment.
 
-Therefore, ensure to reset the V8 state on each run.
+Therefore, be sure to reset the V8 state on each run.
 
 ## Evaluating Results
 
@@ -165,10 +165,10 @@ Even reducing variability, some benchmarks simply vary. Therefore, you may ask:
 The answer depends on the variance interval. The *Rigorous Benchmarking in Reasonable Time¹* is an excellent resource
 on this topic, this paper shows how to establish the repetition count necessary for any evaluation to be reliable.
 
-[*Student’s test (t-test)*][t-test] is a statical method used in the testing of the null hypothesis(H0) for the
+[*Student’s test (t-test)*][t-test] is a statistical method used in the testing of the null hypothesis(H0) for the
 comparison of means between groups. Running a *t-test* helps you to understand whether the differences are
 [statistically significant][] — However, if performance improvements are large, 2x more, for example, there is no need
-for statical machinery to prove they are real.
+for statistical machinery to prove they are real.
 A practical example of this method in an application is the [Node.js core benchmarking suite][] and [`autocannon-compare`][].
 
 While computing a confidence interval, the number of samples *n* (benchmark executions) are categorized into two groups:
