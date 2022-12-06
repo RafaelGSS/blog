@@ -97,7 +97,7 @@ console.log('regular function', test(() => {
 }))
 ```
 
-Running it will provide an interesting result
+Running it will provide an interesting result:
 
 ```bash
 $ node index.js
@@ -108,7 +108,7 @@ regular function 5.6904579ms
 
 It seems pretty conclusive, the arrow function is almost 3x faster than a regular function.
 
-However, when changing the order of the calls, you will get another interesting result
+However, when changing the order of the calls, you will get another interesting result:
 
 ```diff
 +console.log('regular function', test(() => {
@@ -181,7 +181,7 @@ This article approaches the first group (*n ≥ 30*) — Both groups are covered
 The module [`ttest`][] will abstract the confidence calculation. In case you are interested in the equation, see the
 paper mentioned previously³.
 
-The following snippet is a collection of benchmark results before the change (A) and after the change (B)
+The following snippet is a collection of benchmark results before the change (A) and after the change (B):
 
 ```js
 const ttest = require('ttest')
@@ -209,7 +209,7 @@ const B = [
 happen, making the mean useless info, so be careful with the mean. Always plot your data into a graph so you can
 understand its behaviour.
 
-Then, the [`ttest`][] module can be used to calculate the significance of the variance
+Then, the [`ttest`][] module can be used to calculate the significance of the variance:
 
 ```js
 const ttest = require('ttest')
