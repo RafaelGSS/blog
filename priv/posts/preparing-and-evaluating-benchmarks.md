@@ -30,7 +30,7 @@ Programs are, eventually, non-deterministic and their execution time varies base
 conditions. Such variation makes it uncertain what the effect of a particular optimisation might be.
 
 > 💡 [Brendan Gregg][] published a [video][Brendan Gregg video] in 2008, showing that
-apparently, shouting in the data server increases significantly the Disk I/O Latency.
+apparently, shouting in the data server significantly increases the Disk I/O Latency.
 
 Obviously, background processes are harmful to the benchmark result, even small tasks such as the movement of your
 mouse during the benchmark *may* influence the result — You would be surprised. 
