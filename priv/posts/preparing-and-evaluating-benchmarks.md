@@ -309,7 +309,7 @@ Really appreciate the ones that reviewed that long article:
 - [Craig Milam](https://twitter.com/texasrocker)
 - [Matteo Collina](https://twitter.com/matteocollina)
 
-and obviously, [Nearform][] for sponsoring me to perform those studies.
+and obviously, [Nearform][] for sponsoring me to perform these studies.
 
 ## References
 
