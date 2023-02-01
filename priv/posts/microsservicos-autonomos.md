@@ -142,5 +142,4 @@ Não me prolongarei sobre como o Debezium faz, pra isso existe sua excelente [do
 
 Para mostrar na prática, fiz um exemplo bem simples [aqui](https://github.com/RafaelGSS/microservice-debezium-outbox) basta seguir as instruções do README, e voilà!
 
-Qualquer dúvida ~~guarde pra você~~ fale comigo em qualquer [rede social](https://rafaelgss.github.io/portfolio/).
-
+Qualquer dúvida, fale comigo em qualquer [rede social](https://rafaelgss.dev).

@@ -161,4 +161,4 @@ I won't explain how _Debezium_ does it, instead you can look to its excellent [d
 
 To show in practice, I made a very simple example [here](https://github.com/RafaelGSS/microservice-debezium-outbox) just follow the instructions in the README, and voilà!
 
-Any doubts, contact me on my [social networks](https://rafaelgss.github.io/portfolio/).
+Any doubts, contact me on my [social networks](https://rafaelgss.dev).
