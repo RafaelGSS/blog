@@ -58,5 +58,5 @@ services:
 
 networks:
   netw:
-    external:
-      name: netw
+    name: netw
+    external: true

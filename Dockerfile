@@ -10,7 +10,7 @@ RUN apt-get install --yes build-essential inotify-tools
 # Install Phoenix packages
 RUN mix local.hex --force
 RUN mix local.rebar --force
-RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+RUN mix archive.install hex phx_new 1.5.3 --force
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
@@ -23,4 +23,6 @@ WORKDIR /app
 # RUN mix deps.get --force
 
 EXPOSE 4000
-# CMD ["mix", "phx.server"]
+
+# ENTRYPOINT ["mix", "phx.server"]
+CMD ["mix", "phx.server"]

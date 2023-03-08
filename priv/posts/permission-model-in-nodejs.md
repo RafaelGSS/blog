@@ -4,8 +4,7 @@ date: 2023-03-08 10:00
 tags: security,article,en-US,nodejs
 ---
 
-# Permission Model in Node.js
-### Introducing the Node.js Permission Model: A mechanism to restrict access to specific resources during program execution
+# Introducing Node.js Permission Model
 
 Node.js is a powerful, event-driven, server-side platform for building scalable network applications.
 With its ease of use and wide range of features, it has become a popular choice for developers across the globe.
@@ -14,7 +13,10 @@ However, as with any powerful tool, it is important to consider security concern
 That's where the [Node.js Permission Model][] comes in.
 This mechanism allows you to restrict access to specific resources during program execution, giving you greater control
 over the actions your code can perform. In this blog post, we'll explore this feature in detail, including the available
-permissions, CLI arguments, API arguments, and future implementations.
+permissions, CLI arguments, API arguments, and roadmap.
+
+> The Permission Model mechanism was [previously researched][] by [James Snell][] and [Anna Henningsen][], and then [after 2 years of battle][issue],
+[I implemented it][pr].
 
 Developers should use the `--experimental-permission` feature in Node.js to improve the security and reliability of their
 applications. With this feature, they can restrict access to specific resources during program execution, such as
@@ -24,15 +26,16 @@ applications from accessing or modifying sensitive data or running potentially h
 Additionally, the `--experimental-permission` feature provides an API that allows developers to deny or check permissions
 at runtime, providing more flexibility and control over their applications.
 
-// TODO: menion the initial research by James and Anna
-// TODO: mention the Permission Model issue and Prior
-// TODO: shoutout to Security Working Group
+> Before start, I would like to give a big shoutout to the [Node.js Security WG][], to [Nearform][] and
+[OpenJS Foundation][] that made this feature real.
 
 ## Constraints
 
-Before we dive into the specifics of the Node.js Permission Model, it's important to note that there are certain
+Before we dive into the specifics of the [Node.js Permission Model][], it's important to note that there are certain
 constraints to be aware of. First and foremost, this permission model is not bulletproof.
-We assume that the user trusts the running code and that no break-changes are ideal.
+We assume that the user trusts the running code. Just because you are using the permission model, it doesn't mean you can
+run non-trusted code. The [Node.js Security WG][] built and amazing material about [Node.js Security best practices][],
+therefore, if you are interested on this topic consider reading it.
 
 Despite these constraints, the `--experimental-permission` feature is highly beneficial for developers who prioritize
 security and reliability. It adds a low/no overhead when disabled and low overhead when enabled,
@@ -108,3 +111,8 @@ process.permission.has('fs.out', '/home/rafaelgss/protected-folder') // false
 // TODO: mention permission model roadmap
 
 [Node.js Permission Model]: https://nodejs.org/api/permissions.html#permission-model
+[previously researched]: https://www.nearform.com/blog/adding-a-permission-system-to-node-js/
+[James Snell]: https://github.com/jasnell
+[Anna Henningsen]: https://github.com/addaleax
+[pr]: https://github.com/nodejs/node/pull/44004
+[issue]: https://github.com/nodejs/security-wg/issues/791

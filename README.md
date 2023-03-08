@@ -13,4 +13,5 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 - [asdf](https://github.com/asdf-vm/asdf)
   - Erlang 23.3
   - Elixir 23.3
+  - `sudo apt install erlang-dev`
 - [inotify-tools](https://github.com/inotify-tools/inotify-tools/wiki)
