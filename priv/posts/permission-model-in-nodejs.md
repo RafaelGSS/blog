@@ -68,8 +68,6 @@ Example:
 - `--allow-fs-read=/tmp/` - It will allow `FileSystemRead` access to the `/tmp/` folder
 - `--allow-fs-read=/tmp/,/home/.gitignore` - It allows `FileSystemRead` access to the `/tmp/` folder **and** the `/home/.gitignore` file — Relative paths are NOT supported.
 
-> Due to the PrefixRadixTree (fs_permission) lookup, relative paths are not supported. For this reason, the `possiblyTransformPath` was needed. I do have plans to create a pretty similar `path.resolve` on the C++ side so the `possiblyTransformPath` won't be needed, but I'll do it in a second iteration.
-
 You can also mix both arguments:
 
 - `--allow-fs-write=* --allow-fs-read=/tmp/` - It will allow `FileSystemRead` access to the `/tmp/` folder **and** allow **all** the `FileSystemWrite` operations.
@@ -108,7 +106,22 @@ process.permission.has('fs.out', '/home/rafaelgss/protected-folder') // false
 
 ### What's next?
 
-// TODO: mention permission model roadmap
+In the coming months, the Node.js team (especially the [Security Working Group][]) will be actively working to address any bugs
+or issues that may arise with the permission model. This will include working to improve the stability and
+reliability of the permission model, as well as making it easier for developers to use and understand.
+
+In addition to bug fixes and stability improvements, the Node.js team is also planning to introduce new features
+to the permission model. One of the most exciting of these is the addition of net and env permissions, which will allow
+developers to grant or restrict access to network resources and environment variables respectively.
+
+Furthermore, the Node.js team is also working on a better developer experience by passing all the permission model
+configurations through a file instead of CLI arguments. This will make it easier for developers to manage permissions in
+their applications and reduce the risk of configuration errors.
+
+Overall, the Node.js team is committed to continuously improving the permission model in Node.js and making it as robust,
+flexible, and easy to use as possible. If you want to stay up-to-date with the latest developments and progress on the
+permission model roadmap, be sure to check out the tracking issue on GitHub at
+[https://github.com/nodejs/security-wg/issues/898](https://github.com/nodejs/security-wg/issues/898).
 
 [Node.js Permission Model]: https://nodejs.org/api/permissions.html#permission-model
 [previously researched]: https://www.nearform.com/blog/adding-a-permission-system-to-node-js/
@@ -116,3 +129,4 @@ process.permission.has('fs.out', '/home/rafaelgss/protected-folder') // false
 [Anna Henningsen]: https://github.com/addaleax
 [pr]: https://github.com/nodejs/node/pull/44004
 [issue]: https://github.com/nodejs/security-wg/issues/791
+[Security Working Group]: https://github.com/nodejs/security-wg
