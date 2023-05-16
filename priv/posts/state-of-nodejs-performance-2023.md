@@ -1,6 +1,6 @@
 ---
 title: State of Node.js Performance 2023
-date: 2023-05-16 10:00
+date: 2023-05-16 12:00
 tags: performance,benchmarks,article,nodejs,en-US
 ---
 
@@ -81,7 +81,7 @@ published in the main repository:
 
 Before presenting the results, it is crucial to explain the statistical approach used to determine the confidence of the
 benchmark results. This method has been explained in detail in a previous blog post, which you can refer to here:
-**[Preparing and Evaluating Benchmarks](https://blog.rafaelgss.com.br/preparing-and-evaluating-benchmarks)**.
+**[Preparing and Evaluating Benchmarks](https://blog.rafaelgss.dev/preparing-and-evaluating-benchmarks)**.
 
 To compare the impact of a new Node.js version, we ran each benchmark multiple times (30) on each configuration and on
 Node.js 16, 18, and 20. When the output is shown as a table, there are two columns that require careful attention:
@@ -626,7 +626,7 @@ can find more information about my presentations on this topic by [clicking this
 In addition, these benchmarks will use the `ops/sec` metric, which basically means the number of operations that were
 performed in one second. It's important to emphasize that this can only mean a very small fraction of your computing
 time. If you have read my previous article
-([Preparing and Evaluating Benchmarks](https://blog.rafaelgss.com.br/preparing-and-evaluating-benchmarks))
+([Preparing and Evaluating Benchmarks](https://blog.rafaelgss.dev/preparing-and-evaluating-benchmarks))
 you should remember the ‘Evaluating Results’ section, where I approach the problem with `ops/sec` in real-world
 applications — if not, you should consider returning to it.
 
