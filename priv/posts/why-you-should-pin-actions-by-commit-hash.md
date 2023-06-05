@@ -1,18 +1,18 @@
 ---
-title: Why you should pin your GH Actions by commit-hash
+title: Why you should pin your GitHub Actions by commit-hash
 date: 2023-06-05 12:00
 tags: security,article,en-US
 ---
 
-# Why you should pin your Github Actions by commit-hash
+# Why you should pin your GitHub Actions by commit-hash
 
 Supply chain attacks are not something new; we have heard about them extensively, and the maximum we can do is mitigate
 them as best as we can. However, it is crucial to acknowledge that these types of attacks will always exist. With that
-in mind, it is important to understand all the attack vectors and take necessary steps to secure your environment.
+in mind, it is important to understand all the attack vectors and take the necessary steps to secure your environment.
 
 One of the initiatives planned by the Node.js Security WG (Working Group) for 2023 is to enhance the OSSF Scorecard.
 This task requires changing all Node.js actions to be pinned by commit-hash. The reason for this approach is quite
-simple: commit-hash provides immutability, unlike tags which do not."
+simple: commit-hash provides immutability, unlike tags which do not.
 
 For instance, it is quite common to include the following action as part of your application's CI pipeline:
 
@@ -26,8 +26,10 @@ jobs:
       uses: actions/checkout@v3.5.2
 ```
 
-Many developers rely on tools like dependabot or renovatebot to ensure that these actions stay up-to-date. However,
+Many developers rely on tools like Dependabot or Renovatebot to ensure that these actions stay up-to-date. However,
 using the release tag can pose a risk to your environment.
+
+### Looking at a scenario where a malicious actor gets control
 
 Let's consider a scenario where a malicious actor gains control over the `actions/checkout` package. This compromised
 package can now potentially manipulate the entire CI process. It can access environment variables used by other jobs,
@@ -57,7 +59,7 @@ jobs:
       - uses: RafaelGSS/bad-action@v1.0.1
 ```
 
-For this practical example `workflow_dispatch` will be used, but the same applies to `on: [push, pull_request]`
+For this practical example, `workflow_dispatch` will be used, but the same applies to `on: [push, pull_request]`
 processes and so on.
 
 As a result, when the action is executed, it prints "Hello world" in the console.
