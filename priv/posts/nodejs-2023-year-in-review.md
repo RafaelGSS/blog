@@ -139,12 +139,12 @@ Since version 16, Node.js uses a fork of `openssl` from [`quictls`](https://gith
 
 If want some context, check [#51152](https://github.com/nodejs/node/issues/51152). In terms of performance, you can use my repository [`nodejs-bench-operations`](https://github.com/RafaelGSS/nodejs-bench-operations) as a reference for `crypto` operations:
 
-| Node.js 16.20.2 - OpenSSL 3.x | ops/sec | samples |
+| Node.js 16.20.2 - OpenSSL 1.x | ops/sec | samples |
 | --- | --- | --- |
 | crypto.createVerify('RSA-SHA256') | 30,337 | 98 |
 | crypto.verify('RSA-SHA256') | 29,001 | 94 |
 
-| Node.js 18.18.2 - OpenSSL 1.x | ops/sec | samples |
+| Node.js 18.18.2 - OpenSSL 3.x | ops/sec | samples |
 | --- | --- | --- |
 | crypto.createVerify('RSA-SHA256') | 3,599 | 86 |
 | crypto.verify('RSA-SHA256') | 3,638 | 87 |
