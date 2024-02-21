@@ -128,7 +128,7 @@ In 2023, 3 new dependencies were released to Node.js:
 2. [simdutf](https://github.com/simdutf/simdutf) - Unicode routines (UTF8, UTF16, UTF32) parser
 3. [simdjson](https://github.com/simdjson/simdjson) - A library that uses commonly available SIMD instructions and micro parallel algorithms to parse JSON efficiently
 
-All these libraries are focused on performance, enabling Node.js to reach new peaks of improvements as you will see in the [“State of Node.js Performance 2024”](https://blog.rafaelgss.dev/state-of-nodejs-performance-2023).
+All these libraries are focused on performance, enabling Node.js to reach new peaks of improvements as you can see in the [“State of Node.js Performance 2023”](https://blog.rafaelgss.dev/state-of-nodejs-performance-2023).
 
 ### The cost of OpenSSL 3.0.x over QUIC
 
