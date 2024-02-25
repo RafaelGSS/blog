@@ -917,6 +917,10 @@ blog post. Thank you for your time, expertise, and constructive comments.
 - [Igor Savin](https://twitter.com/kibertoad)
 - [Paolo Insogna](https://twitter.com/p_insogna)
 
+It's also worth noting that I continue to contribute to open-source projects in my free time out of love for the community.
+If my work has positively impacted you and you'd like to express your appreciation, consider sponsoring me on
+[GitHub](https://github.com/sponsors/RafaelGSS) 💚.
+
 [readfile comparisson v16 and v18]: https://res.cloudinary.com/rafaelgss/image/upload/v1684174137/blog/state-of-nodejs-performance-2023/Untitled_jc1wyf.png
 [comparisson readfile 16 and 20]: https://res.cloudinary.com/rafaelgss/image/upload/v1684174215/blog/state-of-nodejs-performance-2023/Untitled_l9yunq.png
 [eventtarget comparisson 18 and 20]: https://res.cloudinary.com/rafaelgss/image/upload/v1684174293/blog/state-of-nodejs-performance-2023/Untitled_dnvmk0.png 
