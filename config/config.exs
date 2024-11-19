@@ -2,7 +2,7 @@ import Config
 
 # Configures the endpoint
 config :blog, BlogWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "0.0.0.0"],
   render_errors: [view: BlogWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Blog.PubSub,
   live_view: [signing_salt: "LbJc8UUz"]

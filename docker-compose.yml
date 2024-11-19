@@ -6,7 +6,7 @@ services:
     restart: on-failure
     container_name: blog_prod
     environment:
-      VIRTUAL_HOST: 'blog.rafaelgss.com.br'
+      VIRTUAL_HOST: 'blog.rafaelgss.dev'
     env_file:
       - ./.env
     ports:
@@ -19,7 +19,7 @@ services:
     restart: on-failure
     container_name: blog_prod
     environment:
-      VIRTUAL_HOST: 'blog.rafaelgss.com.br'
+      VIRTUAL_HOST: 'blog.rafaelgss.dev'
     env_file:
       - ./.env
     ports:
