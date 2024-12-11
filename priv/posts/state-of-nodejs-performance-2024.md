@@ -1,6 +1,6 @@
 ---
 title: State of Node.js Performance 2024
-date: 2024-12-10 12:00
+date: 2024-12-11 12:00
 tags: performance,benchmarks,article,nodejs,en-US
 ---
 
