@@ -6,8 +6,8 @@ tags: performance,benchmarks,article,nodejs,en-US
 
 # State of Node.js Performance 2024
 
-The year is 2024 (yet), and Node.js has reached version 23, with two semver-majors
-released per year it might be difficult to keep track of all areas of Node.js.
+The year is 2024, and Node.js has reached version 23. With two semver-majors
+released per year, it might be difficult to keep track of all aspects of Node.js.
 This article revisits the State of Node.js performance, with a focus on comparing
 versions 20 through 22. The goal is to provide a detailed analysis of how the platform
 has evolved over the past year.
@@ -16,7 +16,7 @@ This is a second version of "The State of Node.js Performance" series.
 If you haven't read the [2023 version][state-2023],
 I recommend doing so.
 
-This year's report continues the tradition of rigorous benchmarking, complete with hardware
+This year's report continues the tradition of rigorous benchmarking, providing hardware
 details and reproducible examples. To streamline the experience, reproducible steps are
 collapsed at the start of each section, making it easy for readers to follow along without
 distraction.
@@ -30,7 +30,7 @@ performance gains, regressions, and the factors driving these changes.
 This blog post will share benchmark results across different Node release lines.js using two
 repositories as references: 
 
-* [Node.js internal benchmark suite](https://github.com/nodejs/node/tree/main/benchmark)
+* [Node.js Internal Benchmark Suite](https://github.com/nodejs/node/tree/main/benchmark)
 * [nodejs-bench-operations](https://github.com/RafaelGSS/nodejs-bench-operations)
   * Using [bench-node](https://github.com/RafaelGSS/bench-node) as the benchmark tool
 
@@ -39,7 +39,7 @@ Benchmarks were run on a dedicated AWS machine (C6i.xlarge) with:
 * 4 vCPUs, 8GB RAM
 * Ubuntu 22.04 LTS
 
-Using the following Node.js versions:
+The following Node.js versions were used:
 
 * v20.17.0
 * v22.9.0
