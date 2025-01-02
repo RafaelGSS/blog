@@ -60,6 +60,10 @@ Run it with:
 $ node --allow-natives-syntax my-benchmark.js
 ```
 
+```
+Using delete property x 7,736,869 ops/sec (11 runs sampled) v8-never-optimize=true min..max=(127.65ns ... 129.97ns)
+```
+
 You’ll see ops/sec measurements in your console, plus metadata on min/max times
 and V8 flags. For convenience, try the bench-node-cli tool:
 
