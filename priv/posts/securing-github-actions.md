@@ -116,3 +116,7 @@ Prefer label-based triggers combined with `workflow_dispatch` or manual approval
 - **Pin actions to commit SHAs** instead of tags. Tags are mutable and can be changed without notice.
 - **Use CodeQL and GitHub Copilot** to catch vulnerabilities early—when used properly, they're powerful aids in securing your workflows.
 - **Never trust artifacts blindly.** Validate them explicitly before use.
+
+## Acknowledgments
+
+Thanks to [Carlos Fuentes](https://github.com/metcoder95) for writting this article with me.
