@@ -90,6 +90,8 @@ Adoption is progressing steadily:
 
 Once coverage is complete, migration bundles will be published, including an LTS bundle. The main bottleneck remains reviews that require subject-matter experts.
 
+Thanks, Jacob Smith and Bruno Rodrigues, for hosting this session.
+
 ## 8. Stabilization of module customization hooks / vm.Module
 
 As `module.register()` is being deprecated, the focus is shifting to `module.registerHooks()`.
