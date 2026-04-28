@@ -19,7 +19,7 @@ The collaborator survey highlighted a growing tension between project growth and
 
 Thanks to Jacob Smith and Marco Ippolito for hosting the session.
 
-Source: [https://www.youtube.com/watch?v=7M71yqA5X7s](https://www.youtube.com/watch?v=7M71yqA5X7s)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=OcysOfNeQaY&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=1)
 
 ## 2. Transition to an Annual Release Schedule
 
@@ -29,7 +29,7 @@ Starting with Node.js 27, the project is planning to move from two major release
 * The LTS phase would begin every October. This change aims to reduce the maintenance burden from four active release lines to at most three, improving the efficiency of security backports.
 * There is still discussion around the naming of the April–October phase. Alternatives such as “Preview” or “RC” were considered, but there was no strong consensus to replace “Alpha”.
 
-Source: [https://www.youtube.com/watch?v=68E_v83qg0o](https://www.youtube.com/watch?v=68E_v83qg0o)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=Gl9c1VLGgpw&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=2)
 
 ## 3. New Streams API
 
@@ -41,7 +41,7 @@ An experimental `node:stream/iter` module is being explored to address performan
 
 Thanks to James Snell for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=W0S8S0n6-6M](https://www.youtube.com/watch?v=W0S8S0n6-6M)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=Gl9c1VLGgpw&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=3)
 
 ## 4. Rethinking Collaboratorship: The Code Owners Model
 
@@ -55,8 +55,8 @@ There is ongoing discussion about decoupling technical permissions from the broa
 Thanks to Jacob Smith for hosting the sessions.
 
 Sources:
-[https://www.youtube.com/watch?v=R6u_S4D-0eE](https://www.youtube.com/watch?v=R6u_S4D-0eE)
-[https://www.youtube.com/watch?v=O8Ssk_9y-Z0](https://www.youtube.com/watch?v=O8Ssk_9y-Z0)
+[Day 1](https://www.youtube.com/watch?v=1xQQ0iWRaaY&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=6)
+[Day 2](https://www.youtube.com/watch?v=kWGD9Er1ueQ&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=10)
 
 ## 5. OpenTelemetry in Core
 
@@ -67,7 +67,7 @@ There is ongoing discussion on how to integrate OpenTelemetry (OTel) support wit
 
 Thanks to Chengzhong Wu for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=uK1X_9o9rXo](https://www.youtube.com/watch?v=uK1X_9o9rXo)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=6)
 
 ## 6. Policy on AI Contributions
 
@@ -79,7 +79,7 @@ The project is converging on a position where human accountability remains essen
 
 Thanks to Jacob Smith for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=A8vH9-5O0_M](https://www.youtube.com/watch?v=A8vH9-5O0_M)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=7)
 
 ## 7. Userland Migrations
 
@@ -113,7 +113,7 @@ Libuv v2 aims to modernize the codebase after more than a decade of v1.
 
 Thanks to Santiago Gimeno for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=S2YfOofXbK0](https://www.youtube.com/watch?v=S2YfOofXbK0)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=8)
 
 ## 10. Native Virtual File System (VFS)
 
@@ -125,7 +125,7 @@ A large PR is under review to introduce a native VFS.
 
 Thanks to Matteo Collina for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=S0T0-mXk-5M](https://www.youtube.com/watch?v=S0T0-mXk-5M)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=10)
 
 ## 11. Security: Triage Automation and VEX
 
@@ -135,7 +135,7 @@ The security team is seeing a sharp increase in AI-generated vulnerability repor
 * Work on VEX (Vulnerability Exploitability eXchange) files is nearing completion, helping tools distinguish between real and non-impacting vulnerabilities.
 * There is discussion about moving Medium and Low severity reports to a public workflow, reserving private handling for High and Critical issues.
 
-Source: [https://www.youtube.com/watch?v=K1X7XlX9U4A](https://www.youtube.com/watch?v=K1X7XlX9U4A)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=11)
 
 ## 12. Observability & node:metrics
 
@@ -146,7 +146,7 @@ New observability primitives are being introduced via `node:metrics` and `node:t
 
 Thanks to Stephen Belanger for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=pD9iE1Yv6T4](https://www.youtube.com/watch?v=pD9iE1Yv6T4)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=ZHycC57Iv8o&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=12)
 
 ## Extra: OpenJS Security Stewardship Program
 
@@ -157,4 +157,4 @@ The OpenJS Foundation is exploring a more sustainable funding model for security
 
 Thanks to Robin Ginn for hosting this session.
 
-Source: [https://www.youtube.com/watch?v=x7-M90UoX4I](https://www.youtube.com/watch?v=x7-M90UoX4I)
+Source: [Youtube Recording](https://www.youtube.com/watch?v=Vr2nrYENzSg&list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy&index=4)
